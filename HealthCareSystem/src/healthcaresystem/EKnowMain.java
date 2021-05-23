@@ -646,7 +646,7 @@ public class EKnowMain extends javax.swing.JFrame {
 
     private void doctorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_doctorMouseClicked
         // TODO add your handling code here:
-        FLogin a= new FLogin();
+         DocLogIn a= new DocLogIn();
         a.setVisible(true);
     }//GEN-LAST:event_doctorMouseClicked
 

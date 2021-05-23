@@ -368,6 +368,9 @@ public class HRMOdule extends javax.swing.JFrame {
 
         doc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_doctor_male_60px_1.png"))); // NOI18N
         doc.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                docMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 docMouseEntered(evt);
             }
@@ -735,6 +738,11 @@ public class HRMOdule extends javax.swing.JFrame {
         DeskPerson a = new DeskPerson();
         a.setVisible(true);
     }//GEN-LAST:event_dpMouseClicked
+
+    private void docMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docMouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_docMouseClicked
 
     /**
      * @param args the command line arguments
