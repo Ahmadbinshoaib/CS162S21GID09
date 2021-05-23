@@ -134,6 +134,9 @@ public class CounterModuke extends javax.swing.JFrame {
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_hand_with_a_pill_60px_1.png"))); // NOI18N
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel5MouseEntered(evt);
             }
@@ -187,6 +190,9 @@ public class CounterModuke extends javax.swing.JFrame {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_health_checkup_60px_1.png"))); // NOI18N
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel7MouseEntered(evt);
             }
@@ -305,11 +311,21 @@ public class CounterModuke extends javax.swing.JFrame {
         );
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_shutdown_35px.png"))); // NOI18N
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
 
         desk8.setBackground(new java.awt.Color(50, 50, 51));
         desk8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 17)); // NOI18N
         desk8.setForeground(new java.awt.Color(51, 0, 153));
         desk8.setText("E  X  I  T ");
+        desk8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                desk8MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -427,6 +443,8 @@ public class CounterModuke extends javax.swing.JFrame {
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
+        FixSession fs = new FixSession();
+        fs.setVisible(true);
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseEntered
@@ -497,6 +515,30 @@ public class CounterModuke extends javax.swing.JFrame {
         icon = new ImageIcon(getClass().getResource("icons8_view_60px_1.png"));
         jLabel8.setIcon(icon);
     }//GEN-LAST:event_jLabel8MouseExited
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+        FixSession fs = new FixSession();
+        fs.setVisible(true);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+        FixSession fs = new FixSession();
+        fs.setVisible(true);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        // TODO add your handling code here:
+        dispose();
+        dispose();
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void desk8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_desk8MouseClicked
+        // TODO add your handling code here:
+        dispose();
+        dispose();
+    }//GEN-LAST:event_desk8MouseClicked
 
     /**
      * @param args the command line arguments
