@@ -10,7 +10,7 @@ package healthcaresystem;
  * @author Maria
  */
 public class HealthCareSystem {
-
+static public int log=4;
     /**
      * @param args the command line arguments
      */
