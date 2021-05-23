@@ -42,6 +42,7 @@ public class CounterLogin extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/Screenshot (197).png"))); // NOI18N
 
@@ -194,6 +195,9 @@ public class CounterLogin extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
+        CounterModuke a= new CounterModuke();
+        a.setVisible(true);
+        
         
     }//GEN-LAST:event_jLabel10MouseClicked
 
