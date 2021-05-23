@@ -129,6 +129,9 @@ public class HRMOdule extends javax.swing.JFrame {
 
         phar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_pharmacist_60px.png"))); // NOI18N
         phar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                pharMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 pharMouseEntered(evt);
             }
@@ -177,6 +180,9 @@ public class HRMOdule extends javax.swing.JFrame {
 
         indw.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_worker_60px_1.png"))); // NOI18N
         indw.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                indwMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 indwMouseEntered(evt);
             }
@@ -249,6 +255,9 @@ public class HRMOdule extends javax.swing.JFrame {
         indm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_event_management_60px.png"))); // NOI18N
         indm.setToolTipText("");
         indm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                indmMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 indmMouseEntered(evt);
             }
@@ -741,8 +750,29 @@ public class HRMOdule extends javax.swing.JFrame {
 
     private void docMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docMouseClicked
         // TODO add your handling code here:
+        AddDoctor a = new AddDoctor();
+        a.setVisible(true);
        
     }//GEN-LAST:event_docMouseClicked
+
+    private void pharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pharMouseClicked
+        // TODO add your handling code here:
+        AddPharmacist a= new AddPharmacist();
+         a.setVisible(true);
+    }//GEN-LAST:event_pharMouseClicked
+
+    private void indwMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_indwMouseClicked
+        // TODO add your handling code here:
+        
+        AddWorker a = new AddWorker();
+         a.setVisible(true);
+    }//GEN-LAST:event_indwMouseClicked
+
+    private void indmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_indmMouseClicked
+        // TODO add your handling code here:
+        AddIndustrialManager a= new AddIndustrialManager();
+         a.setVisible(true);
+    }//GEN-LAST:event_indmMouseClicked
 
     /**
      * @param args the command line arguments

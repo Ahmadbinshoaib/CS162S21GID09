@@ -98,6 +98,7 @@ public class AddWorker extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(64, 25, 82));
         jPanel1.setForeground(new java.awt.Color(20, 1, 31));
@@ -127,7 +128,7 @@ public class AddWorker extends javax.swing.JFrame {
         jLabel6.setText("Worker ID");
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextField1.setText("Worker ID");
+        jTextField1.setText("Enter Worker ID");
         jTextField1.setBorder(null);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,6 +180,7 @@ public class AddWorker extends javax.swing.JFrame {
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_name_35px.png"))); // NOI18N
 
         jTextField3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jTextField3.setForeground(new java.awt.Color(64, 25, 82));
         jTextField3.setText("Name");
         jTextField3.setBorder(null);
         jTextField3.addActionListener(new java.awt.event.ActionListener() {
@@ -205,6 +207,7 @@ public class AddWorker extends javax.swing.JFrame {
         jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_cash_in_hand_35px.png"))); // NOI18N
 
         jTextField4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jTextField4.setForeground(new java.awt.Color(64, 25, 82));
         jTextField4.setText("Phone Number");
         jTextField4.setBorder(null);
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -213,7 +216,8 @@ public class AddWorker extends javax.swing.JFrame {
             }
         });
 
-        jTextField5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jTextField5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 11)); // NOI18N
+        jTextField5.setForeground(new java.awt.Color(64, 25, 82));
         jTextField5.setText("E-mail");
         jTextField5.setBorder(null);
         jTextField5.addActionListener(new java.awt.event.ActionListener() {
@@ -222,6 +226,8 @@ public class AddWorker extends javax.swing.JFrame {
             }
         });
 
+        jTextField6.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 11)); // NOI18N
+        jTextField6.setForeground(new java.awt.Color(64, 25, 82));
         jTextField6.setText("CNIC");
         jTextField6.setBorder(null);
         jTextField6.addActionListener(new java.awt.event.ActionListener() {
@@ -231,6 +237,7 @@ public class AddWorker extends javax.swing.JFrame {
         });
 
         jTextField7.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jTextField7.setForeground(new java.awt.Color(64, 25, 82));
         jTextField7.setText("Age");
         jTextField7.setBorder(null);
         jTextField7.addActionListener(new java.awt.event.ActionListener() {
@@ -319,6 +326,7 @@ public class AddWorker extends javax.swing.JFrame {
         jSeparator11.setForeground(new java.awt.Color(64, 25, 82));
 
         jTextField8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jTextField8.setForeground(new java.awt.Color(64, 25, 82));
         jTextField8.setText("Blood Group");
         jTextField8.setBorder(null);
         jTextField8.addActionListener(new java.awt.event.ActionListener() {
@@ -328,6 +336,7 @@ public class AddWorker extends javax.swing.JFrame {
         });
 
         jTextField9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jTextField9.setForeground(new java.awt.Color(64, 25, 82));
         jTextField9.setText("Username");
         jTextField9.setBorder(null);
         jTextField9.addActionListener(new java.awt.event.ActionListener() {
@@ -337,6 +346,7 @@ public class AddWorker extends javax.swing.JFrame {
         });
 
         jTextField11.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        jTextField11.setForeground(new java.awt.Color(64, 25, 82));
         jTextField11.setText("Password");
         jTextField11.setBorder(null);
         jTextField11.addActionListener(new java.awt.event.ActionListener() {
@@ -505,15 +515,14 @@ public class AddWorker extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                                                    .addComponent(jRadioButton1)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                    .addComponent(jRadioButton3)
-                                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                    .addComponent(jRadioButton2))
-                                                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                                .addComponent(jRadioButton1)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                .addComponent(jRadioButton3)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(jRadioButton2))
+                                            .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                     .addComponent(jLabel14)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addComponent(jLabel19)
@@ -808,6 +817,7 @@ public class AddWorker extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

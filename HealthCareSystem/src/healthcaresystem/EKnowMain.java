@@ -648,23 +648,25 @@ public class EKnowMain extends javax.swing.JFrame {
         // TODO add your handling code here:
          DocLogIn a= new DocLogIn();
         a.setVisible(true);
+        
+       
     }//GEN-LAST:event_doctorMouseClicked
 
     private void counterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_counterMouseClicked
         // TODO add your handling code here:
-        FLogin a= new FLogin();
+        CounterLogin a= new CounterLogin();
         a.setVisible(true);
     }//GEN-LAST:event_counterMouseClicked
 
     private void pharMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pharMouseClicked
         // TODO add your handling code here:
-        FLogin a= new FLogin();
-        a.setVisible(true);
+       PharmacyLogin a = new PharmacyLogin();
+       a.setVisible(true);
     }//GEN-LAST:event_pharMouseClicked
 
     private void indMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_indMouseClicked
         // TODO add your handling code here:
-        FLogin a= new FLogin();
+        IndustryLogin a= new IndustryLogin();
         a.setVisible(true);
     }//GEN-LAST:event_indMouseClicked
 
