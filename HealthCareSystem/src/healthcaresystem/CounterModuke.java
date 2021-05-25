@@ -5,6 +5,7 @@
  */
 package healthcaresystem;
 
+import com.sun.javafx.scene.layout.region.Margins;
 import static healthcaresystem.HRMOdule.icon;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -531,13 +532,14 @@ public class CounterModuke extends javax.swing.JFrame {
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
         dispose();
-        dispose();
+        
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void desk8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_desk8MouseClicked
         // TODO add your handling code here:
         dispose();
-        dispose();
+       
+    
     }//GEN-LAST:event_desk8MouseClicked
 
     /**
