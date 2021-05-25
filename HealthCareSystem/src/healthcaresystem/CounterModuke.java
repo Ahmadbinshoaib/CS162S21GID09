@@ -538,6 +538,8 @@ public class CounterModuke extends javax.swing.JFrame {
     private void desk8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_desk8MouseClicked
         // TODO add your handling code here:
         dispose();
+       
+    
     }//GEN-LAST:event_desk8MouseClicked
 
     /**
