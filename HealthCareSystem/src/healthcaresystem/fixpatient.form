@@ -52,149 +52,145 @@
                   <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jScrollPane2" min="-2" pref="438" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jSeparator3" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="jRadioButton4" min="-2" pref="69" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jTextField5" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                                  <Component id="jRadioButton5" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator5" alignment="1" max="32767" attributes="0"/>
+                                                  <Component id="jSeparator9" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
+                                              <Component id="jTextField1" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="jTextField3" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                              <Component id="jTextField7" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                                              <Component id="jSeparator7" min="-2" pref="164" max="-2" attributes="0"/>
+                                              <Component id="jCalendar1" min="-2" pref="164" max="-2" attributes="0"/>
+                                              <Component id="jSeparator12" min="-2" pref="164" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jLabel18" alignment="1" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jTextField4" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                                                      <Group type="102" alignment="0" attributes="0">
+                                                          <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace max="-2" attributes="0"/>
+                                                          <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
+                                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                          <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <Component id="jSeparator8" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                                      <Component id="jSeparator4" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jTextField8" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                                                      <Component id="jSeparator11" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace pref="99" max="32767" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jSeparator15" min="-2" pref="164" max="-2" attributes="0"/>
+                                      <Component id="jComboBox1" min="-2" pref="168" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jTextField6" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <Component id="jSeparator6" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jSeparator10" min="-2" pref="164" max="-2" attributes="0"/>
+                                      <Component id="jTextField12" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <Component id="jTextField14" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
+                                      <Component id="jSeparator19" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
                           <EmptySpace max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel21" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jSeparator3" min="-2" pref="164" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jRadioButton4" min="-2" pref="69" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField5" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
-                                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                                          <Component id="jRadioButton5" alignment="1" min="-2" pref="69" max="-2" attributes="0"/>
-                                                          <Component id="jSeparator5" alignment="1" max="32767" attributes="0"/>
-                                                          <Component id="jSeparator9" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
-                                                      <Component id="jTextField1" alignment="0" min="-2" pref="202" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Component id="jTextField3" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                                      <Component id="jTextField7" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
-                                                      <Component id="jSeparator7" min="-2" pref="164" max="-2" attributes="0"/>
-                                                      <Component id="jCalendar1" min="-2" pref="164" max="-2" attributes="0"/>
-                                                      <Component id="jSeparator12" min="-2" pref="164" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                                              <Component id="jLabel18" alignment="1" min="-2" max="-2" attributes="0"/>
-                                                          </Group>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jTextField4" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
-                                                              <Group type="102" alignment="0" attributes="0">
-                                                                  <Component id="jRadioButton1" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace max="-2" attributes="0"/>
-                                                                  <Component id="jRadioButton3" min="-2" max="-2" attributes="0"/>
-                                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                                  <Component id="jRadioButton2" min="-2" max="-2" attributes="0"/>
-                                                              </Group>
-                                                              <Component id="jSeparator8" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                                              <Component id="jSeparator4" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                      <Group type="102" alignment="0" attributes="0">
-                                                          <Component id="jLabel22" min="-2" max="-2" attributes="0"/>
-                                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                          <Group type="103" groupAlignment="0" attributes="0">
-                                                              <Component id="jTextField8" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
-                                                              <Component id="jSeparator11" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                                          </Group>
-                                                      </Group>
-                                                  </Group>
-                                              </Group>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jSeparator15" min="-2" pref="164" max="-2" attributes="0"/>
-                                              <Component id="jComboBox1" min="-2" pref="168" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane2" min="-2" pref="438" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
                                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel41" min="-2" pref="135" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="1" attributes="0">
-                                              <Component id="jLabel35" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="-2" attributes="0"/>
-                                              <Component id="jLabel36" min="-2" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jTextField6" alignment="0" min="-2" pref="168" max="-2" attributes="0"/>
-                                                  <Component id="jSeparator6" alignment="0" min="-2" pref="164" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Group type="102" attributes="0">
-                                              <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="jSeparator10" min="-2" pref="164" max="-2" attributes="0"/>
-                                                  <Component id="jTextField12" min="-2" pref="168" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="175" max="-2" attributes="0"/>
                                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace min="-2" pref="127" max="-2" attributes="0"/>
+                                          <Component id="rec" min="-2" pref="189" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
-                                  <EmptySpace pref="20" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace pref="100" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -317,49 +313,56 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Group type="102" alignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" attributes="0">
-                                                      <Group type="102" attributes="0">
-                                                          <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
-                                                          <Component id="jTextField8" min="-2" pref="14" max="-2" attributes="0"/>
-                                                          <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
-                                                          <Component id="jSeparator11" min="-2" pref="14" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <Component id="jLabel21" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
-                                                      <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jScrollPane2" pref="45" max="32767" attributes="0"/>
-                                                      <Component id="jLabel25" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <EmptySpace max="32767" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" attributes="0">
-                                                  <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
-                                                  <Component id="jCalendar1" min="-2" pref="22" max="-2" attributes="0"/>
-                                                  <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="jComboBox1" min="-2" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="3" attributes="0">
+                                                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="jTextField14" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  </Group>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jSeparator15" min="-2" pref="15" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="jSeparator15" min="-2" pref="15" max="-2" attributes="0"/>
+                                                      <Component id="jSeparator19" alignment="0" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                                  <Component id="jTextField8" min="-2" pref="14" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                                                  <Component id="jSeparator11" min="-2" pref="14" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Component id="jLabel21" alignment="1" min="-2" pref="44" max="-2" attributes="0"/>
+                                              <Component id="jLabel22" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="jScrollPane2" pref="45" max="32767" attributes="0"/>
+                                              <Component id="jLabel25" max="32767" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                          <Component id="jCalendar1" min="-2" pref="22" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="94" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="1" attributes="0">
+                                          <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="1" attributes="0">
                                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                          <Component id="jLabel41" min="-2" pref="40" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="rec" min="-2" pref="40" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -982,49 +985,62 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jTextField9" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jTextField10" min="-2" pref="164" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jTextField14" min="-2" pref="150" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jTextField15" min="-2" pref="164" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                                      <Component id="jTextField11" min="-2" pref="125" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="jTextField13" min="-2" pref="164" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace min="22" pref="22" max="-2" attributes="0"/>
-                                      <Component id="jTextField16" min="-2" pref="117" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jTextField17" min="-2" pref="164" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jTextField10" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="jSeparator13" min="-2" pref="143" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
-                              <Component id="jTextField2" min="-2" pref="175" max="-2" attributes="0"/>
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField13" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="jSeparator16" min="-2" pref="139" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="47" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="290" max="-2" attributes="0"/>
-                          <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="345" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField11" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <Component id="jSeparator14" alignment="0" min="-2" pref="135" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="76" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField18" min="-2" pref="164" max="-2" attributes="0"/>
+                                  <Component id="jSeparator17" min="-2" pref="135" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="265" max="-2" attributes="0"/>
+                              <Component id="jLabel40" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="225" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTextField2" min="-2" pref="253" max="-2" attributes="0"/>
+                                  <Component id="jSeparator18" min="-2" pref="229" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1033,28 +1049,53 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jTextField2" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Component id="jSeparator18" min="-2" pref="10" max="-2" attributes="0"/>
+                                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                                          <Component id="jTextField10" min="-2" max="-2" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
+                                          <Component id="jSeparator13" min="-2" pref="10" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Component id="jLabel3" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Component id="jLabel11" alignment="0" min="-2" pref="43" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                              <Component id="jTextField11" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jSeparator14" min="-2" pref="10" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField9" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jTextField10" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="jTextField11" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jTextField13" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel40" min="-2" pref="20" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                                      <Component id="jTextField13" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSeparator16" min="-2" pref="10" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jTextField18" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jSeparator17" min="-2" pref="10" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel12" alignment="1" min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="jLabel20" min="-2" pref="43" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="52" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jTextField14" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jTextField15" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="jTextField16" alignment="3" min="-2" pref="27" max="-2" attributes="0"/>
-                          <Component id="jTextField17" alignment="3" min="-2" pref="14" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                          <Component id="jLabel40" min="-2" pref="20" max="-2" attributes="0"/>
-                          <EmptySpace pref="86" max="32767" attributes="0"/>
-                      </Group>
+                      <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -1066,35 +1107,18 @@
                   <Color blue="55" green="19" red="40" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="18" style="1"/>
+                  <Font name="Tahoma" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="BILLING  DETAILS"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
-                </Property>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField9">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="55" green="19" red="40" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Enter Amount(In RS) :"/>
+                <Property name="text" type="java.lang.String" value="B I L L I N G   D E T A I L S"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField9ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextField10">
@@ -1103,54 +1127,16 @@
                   <Font name="Yu Gothic UI Semibold" size="11" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="52" green="19" red="40" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField10ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField11">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="55" green="19" red="40" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Discount(If Any) : "/>
+                <Property name="text" type="java.lang.String" value="Enter amount (Rs)"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
+                <Property name="opaque" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField13">
-              <Properties>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Yu Gothic UI Semibold" size="11" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="52" green="19" red="40" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField13ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField10ActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel40">
@@ -1164,7 +1150,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="CALCULATE"/>
+                <Property name="text" type="java.lang.String" value="C A L C U L A T E"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
                     <LineBorder thickness="2">
@@ -1177,106 +1163,114 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel40MouseClicked"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField14">
+            <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="55" green="19" red="40" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Enter Amount Payed :"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="null"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/healthcaresystem/icons8_cheap_2_27px.png"/>
                 </Property>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField14ActionPerformed"/>
-              </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField15">
+            <Component class="javax.swing.JSeparator" name="jSeparator13">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel11">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/healthcaresystem/icons8_discount_27px.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField11">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI Semibold" size="11" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="52" green="19" red="40" type="rgb"/>
-                </Property>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField15ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JTextField" name="jTextField16">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="55" green="19" red="40" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Tahoma" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Arrears :"/>
+                <Property name="text" type="java.lang.String" value="Enter discount"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
                 </Property>
+                <Property name="opaque" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField16ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField11ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextField17">
+            <Component class="javax.swing.JSeparator" name="jSeparator14">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel12">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/healthcaresystem/icons8_get_cash_27px_1.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField13">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Yu Gothic UI Semibold" size="11" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="52" green="19" red="40" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="text" type="java.lang.String" value="Amount Payed"/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
+                  <Border info="null"/>
                 </Property>
+                <Property name="opaque" type="boolean" value="false"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField17ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField13ActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator16">
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel20">
+              <Properties>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/healthcaresystem/icons8_paper_money_27px.png"/>
+                </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField18">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Yu Gothic UI Semibold" size="11" style="0"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Arreas"/>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="null"/>
+                </Property>
+                <Property name="opaque" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField18ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator17">
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator18">
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JLabel" name="jLabel41">
+        <Component class="javax.swing.JLabel" name="rec">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Tahoma" size="14" style="1"/>
+              <Font name="Tahoma" size="12" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="52" green="19" red="40" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value=" Generate Reciept"/>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2">
-                  <Color PropertyName="color" blue="52" green="19" red="40" type="rgb"/>
-                </LineBorder>
-              </Border>
-            </Property>
           </Properties>
           <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel41MouseClicked"/>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="recMouseClicked"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
@@ -1285,11 +1279,39 @@
               <Image iconType="3" name="/healthcaresystem/icons8_print_60px.png"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseExited"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
               <Image iconType="3" name="/healthcaresystem/icons8_ticket_35px.png"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JTextField" name="jTextField14">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Yu Gothic UI Semibold" size="11" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="52" green="19" red="40" type="rgb"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="Disease"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="null"/>
+            </Property>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField14ActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator19">
+          <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="52" green="19" red="40" type="rgb"/>
             </Property>
           </Properties>
         </Component>

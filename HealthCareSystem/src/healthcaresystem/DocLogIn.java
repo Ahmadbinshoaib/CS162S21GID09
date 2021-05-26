@@ -194,6 +194,10 @@ public class DocLogIn extends javax.swing.JFrame {
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
         // TODO add your handling code here:
+        dispose();
+        DoctorModule a= new DoctorModule();
+        a.setVisible(true);
+        
         
     }//GEN-LAST:event_jLabel10MouseClicked
 
