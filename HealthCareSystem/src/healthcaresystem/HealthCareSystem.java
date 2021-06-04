@@ -5,12 +5,33 @@
  */
 package healthcaresystem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Maria
  */
+
 public class HealthCareSystem {
-static public int log=4;
+    static HealthCareSystem instance;
+    static HealthCareSystem a= new HealthCareSystem();
+    
+    public List<DeskPersonal>desklist= new ArrayList<>();
+    
+    public static HealthCareSystem getInstance(){
+        if(instance==null)
+        {
+            instance = new HealthCareSystem();
+        }
+        
+        return instance;
+    }
+     
+     private HealthCareSystem(){
+         
+     }
+
     /**
      * @param args the command line arguments
      */
@@ -21,5 +42,22 @@ static public int log=4;
         
         
     }
+    
+    public void addList( DeskPersonal a)
+    {
+        desklist.add(a);
+    }
+    
+   public void deleteEmployee(int a)
+   {
+       desklist.remove(a);
+   }
+   
+   public void updateEmployee(DeskPersonal b, int a)
+   {
+       desklist.set(a,b);
+       
+   }
+    
     
 }
