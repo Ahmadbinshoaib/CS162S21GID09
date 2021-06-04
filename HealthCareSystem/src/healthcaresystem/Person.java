@@ -19,7 +19,7 @@ public abstract class Person {
     /**
      * @param Name the Name to set
      */
-    public abstract void setName(String Name);
+    public abstract boolean setName(String Name);
 
     /**
      * @return the ContactNumber
@@ -28,7 +28,7 @@ public abstract class Person {
     /**
      * @param ContactNumber the ContactNumber to set
      */
-    public abstract void setContactNumber(String ContactNumber);
+    public abstract boolean setContactNumber(String ContactNumber);
 
     /**
      * @return the Email
@@ -38,7 +38,7 @@ public abstract class Person {
     /**
      * @param Email the Email to set
      */
-    public abstract void setEmail(String Email);
+    public abstract boolean setEmail(String Email);
 
     /**
      * @return the CNIC
@@ -48,7 +48,7 @@ public abstract class Person {
     /**
      * @param CNIC the CNIC to set
      */
-    public abstract void setCNIC(String CNIC);
+    public abstract boolean setCNIC(String CNIC);
 
     /**
      * @return the bloodgroup

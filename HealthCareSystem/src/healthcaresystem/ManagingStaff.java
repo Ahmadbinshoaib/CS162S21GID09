@@ -27,7 +27,7 @@ public abstract class ManagingStaff extends Person{
     /**
      * @param Age the Age to set
      */
-    public abstract void setAge(String Age);
+    public abstract boolean setAge(String Age);
     
 
     /**
@@ -38,7 +38,7 @@ public abstract class ManagingStaff extends Person{
     /**
      * @param Salary the Salary to set
      */
-    public abstract void setSalary(String Salary);
+    public abstract boolean setSalary(String Salary);
 
     /**
      * @return the Username
@@ -48,7 +48,7 @@ public abstract class ManagingStaff extends Person{
     /**
      * @param Username the Username to set
      */
-    public abstract void setUsername(String Username);
+    public abstract boolean setUsername(String Username);
 
     /**
      * @return the password
@@ -58,7 +58,7 @@ public abstract class ManagingStaff extends Person{
     /**
      * @param password the password to set
      */
-    public abstract void setPassword(String password);
+    public abstract boolean setPassword(String password);
    
     
     
@@ -69,8 +69,35 @@ public abstract class ManagingStaff extends Person{
     }
 
     @Override
-    public void setName(String Name) {
-       this.Name= Name; //To change body of generated methods, choose Tools | Templates.
+    public boolean setName(String name) {
+        boolean flag= true;   
+    int count=0;
+    int len= name.length();
+    char[] aname= new char[len];
+    aname= name.toCharArray();
+    if(len<=50)
+    {
+    for(int i=0; i<len; i++)
+    {
+      if((aname[i]>='A' && aname[i]<='Z') || (aname[i]>='a' && aname[i]<='z') || aname[i]==' ' )
+     {
+        count= count+1;
+     }
+      
+    }
+    if(count==len)
+    {
+    this.Name= Name;
+    flag= true;
+    }
+    else
+    {
+       
+     flag= false;
+    }
+    }
+    return flag; 
+        //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -79,8 +106,28 @@ public abstract class ManagingStaff extends Person{
     }
 
     @Override
-    public void setContactNumber(String ContactNumber) {
-       this.ContactNumber= ContactNumber; //To change body of generated methods, choose Tools | Templates.
+    public boolean setContactNumber(String ContactNumber) {
+        boolean flag= false;
+         int count=0;
+        int len= ContactNumber.length();
+        char [] aphoneNumber= new char [len];
+        aphoneNumber= ContactNumber.toCharArray();
+        if(len==11)
+        {
+            if(aphoneNumber[0]>='0' && aphoneNumber[0]<='9' && aphoneNumber[1]>='0' && aphoneNumber[1]<='9' && aphoneNumber[2]>='0' && aphoneNumber[2]<='9' && aphoneNumber[3]>='0' && aphoneNumber[3]<='9' && aphoneNumber[4]>='0' && aphoneNumber[4]<='9' && aphoneNumber[5]>='0' && aphoneNumber[5]<='9' && aphoneNumber[6]>='0' && aphoneNumber[6]<='9' && aphoneNumber[7]>='0' && aphoneNumber[7]<='9' && aphoneNumber[8]>='0' && aphoneNumber[8]<='9' && aphoneNumber[9]>='0' && aphoneNumber[9]<='9' && aphoneNumber[10]>='0' && aphoneNumber[10]<='9')
+            {
+                count= count+1;
+            }
+      
+     
+            if(count==1)
+            {
+                this.ContactNumber= ContactNumber;
+                flag=true;
+            }
+        }
+    return flag;
+        //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -89,8 +136,33 @@ public abstract class ManagingStaff extends Person{
     }
 
     @Override
-    public void setEmail(String Email) {
-        this.Email= Email; //To change body of generated methods, choose Tools | Templates.
+    public boolean setEmail(String Email) {
+        boolean test=true;
+        int index = 0;
+        char[] ch = new char[Email.length()];
+        
+        if (ch[0] == '@') {
+            test= false;
+        } else {
+            for (int i = 1; i < Email.length(); i++) {
+                if (ch[i] == '@') {
+                    index = i;
+                    break;
+                }
+            }
+            if (ch[index] == '.') {
+               test = false;
+            }
+        }
+        if (test== true) {
+            this.Email= Email;
+            return true;
+            
+        } else {
+           return false;
+
+        }
+         //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
@@ -99,9 +171,30 @@ public abstract class ManagingStaff extends Person{
     }
 
     @Override
-    public void setCNIC(String CNIC) {
-        this.CNIC= CNIC; //To change body of generated methods, choose Tools | Templates.
+    public boolean setCNIC(String CNIC) {
+        boolean flag= false;
+        int count=0;
+        int len= CNIC.length();
+        char [] aCNIC= new char [len];
+        aCNIC= CNIC.toCharArray();
+        if(len==13)
+        {
+            if(aCNIC[0]>='0' && aCNIC[0]<='9' && aCNIC[1]>='0' && aCNIC[1]<='9' && aCNIC[2]>='0' && aCNIC[2]<='9' && aCNIC[3]>='0' && aCNIC[3]<='9' && aCNIC[4]>='0' && aCNIC[4]<='9' && aCNIC[5]>='0' && aCNIC[5]<='9' && aCNIC[6]>='0' && aCNIC[6]<='9' && aCNIC[7]>='0' && aCNIC[7]<='9' && aCNIC[8]>='0' && aCNIC[8]<='9' && aCNIC[9]>='0' && aCNIC[9]<='9' && aCNIC[10]>='0' && aCNIC[10]<='9' && aCNIC[11]>='0' && aCNIC[11]<='9' && aCNIC[12]>='0' && aCNIC[12]<='9'  )
+            {
+                count= count+1;
+            }
+      
+     
+            if(count==1)
+        {
+            this.CNIC= CNIC;
+            flag=true;
+        }
     }
+    return flag;
+   }
+         //To change body of generated methods, choose Tools | Templates.
+    
 
     @Override
     public String getBloodgroup() {

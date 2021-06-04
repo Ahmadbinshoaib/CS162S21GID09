@@ -897,6 +897,7 @@
             </Property>
           </Properties>
           <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="salaryMouseEntered"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="salaryActionPerformed"/>
             <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="salaryKeyTyped"/>
           </Events>
@@ -1346,6 +1347,9 @@
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="na">
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="naKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="ph">
         </Component>

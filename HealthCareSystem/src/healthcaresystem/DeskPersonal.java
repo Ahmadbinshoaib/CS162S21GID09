@@ -42,8 +42,36 @@ public class DeskPersonal extends ManagingStaff{
     /**
      * @param DeskID the DeskID to set
      */
-    public void setDeskID(String DeskID) {
-        this.DeskID = DeskID;
+    public boolean setDeskID(String DeskID) {
+        boolean flag= false;
+        int count=0;
+        int len= DeskID.length();
+        char [] aEmployeeID= new char [len];
+        aEmployeeID= DeskID.toCharArray();
+        if(len==7)
+        {
+            if(aEmployeeID[0]>='A' && aEmployeeID[0]<='Z' && aEmployeeID[1]>='A' && aEmployeeID[1]<='Z' && aEmployeeID[2]>='A' && aEmployeeID[2]<='Z')
+            {
+                count= count+1;
+            }
+            if(aEmployeeID[3]=='-')
+            {
+            count=count+1; 
+            }
+
+            if(aEmployeeID[4]>='0' && aEmployeeID[4]<='9' && aEmployeeID[5]>='0' && aEmployeeID[5]<='9' && aEmployeeID[6]>='0' && aEmployeeID[6]<='9')
+            {
+                count=count+1;
+            }
+     
+            if(count==3)
+            {
+                this.DeskID = DeskID;
+                flag=true;
+            }
+        }
+        return flag;
+        
     }
     
     
@@ -69,8 +97,22 @@ public class DeskPersonal extends ManagingStaff{
     }
 
     @Override
-    public void setSalary(String Salary) {
-        this.Salary= Salary; //To change body of generated methods, choose Tools | Templates.
+    public boolean setSalary(String Salary) {
+        boolean flag = true;
+        int len=Salary.length();
+        char[] aSalary=new char[len];
+        aSalary=Salary.toCharArray();
+        for (int i = 0; i < len; i++) {
+            if(!(aSalary[i]>='0' && aSalary[i]<='9'))
+            {
+                flag=false;
+            }
+            
+        }
+        if(flag==true){
+            this.Salary= Salary; //To change body of generated methods, choose Tools | Templates.
+        }
+        return flag;
     }
 
     @Override
@@ -79,8 +121,36 @@ public class DeskPersonal extends ManagingStaff{
     }
 
     @Override
-    public void setUsername(String Username) {
-        this.Username= Username; //To change body of generated methods, choose Tools | Templates.
+    public boolean setUsername(String Username) {
+        boolean flag= true;   
+        int count=0;
+        int len= Username.length();
+        char[] aUsername= new char[len];
+        aUsername= Username.toCharArray();
+        if(len<=10)
+        {
+            for(int i=0; i<len; i++)
+            {
+                if((aUsername[i]>='A' && aUsername[i]<='Z') || (aUsername[i]>='a' && aUsername[i]<='z') || (aUsername[i]>='0' && aUsername[i]<='9') )
+                {
+                    count= count+1;
+                }
+      
+            }
+            if(count==len)
+            {
+                this.Username= Username;
+                flag= true;
+            }
+            else
+            {
+       
+                flag= false;
+            }
+        }
+        return flag;
+         //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -89,8 +159,9 @@ public class DeskPersonal extends ManagingStaff{
     }
 
     @Override
-    public void setPassword(String password) {
+    public boolean setPassword(String password) {
         this.password= password; //To change body of generated methods, choose Tools | Templates.
+        return true;
     }
 
     @Override
@@ -99,8 +170,24 @@ public class DeskPersonal extends ManagingStaff{
     }
 
     @Override
-    public void setAge(String Age) {
-        this.Age= Age; //To change body of generated methods, choose Tools | Templates.
+    public boolean setAge(String Age) {
+        boolean flag = true;
+        int len=Age.length();
+        char[] aAge=new char[len];
+        aAge=Age.toCharArray();
+        for (int i = 0; i < len; i++) {
+            if(!(aAge[i]>='0' && aAge[i]<='9'))
+            {
+                flag=false;
+            }
+            
+        }
+        if(flag==true){
+            this.Age= Age; //To change body of generated methods, choose Tools | Templates.
+        }
+        return flag;
+         //To change body of generated methods, choose Tools | Templates.
+        
     }
     
 }

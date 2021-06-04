@@ -350,6 +350,11 @@ public class DeskPerson extends javax.swing.JFrame {
 
         salary.setText("Salary");
         salary.setBorder(null);
+        salary.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                salaryMouseEntered(evt);
+            }
+        });
         salary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 salaryActionPerformed(evt);
@@ -616,6 +621,12 @@ public class DeskPerson extends javax.swing.JFrame {
         jLabel30.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel30MouseClicked(evt);
+            }
+        });
+
+        na.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                naKeyTyped(evt);
             }
         });
 
@@ -1103,24 +1114,21 @@ public class DeskPerson extends javax.swing.JFrame {
         String Password= pas.getText();
         String Address= address.getText();
         
-        biodata.setDeskID(DPID);
-        biodata.setName(Name);
-        biodata.setContactNumber(PhoneNumber);
-        biodata.setEmail(Email);
-        biodata.setCNIC(CNIC);
-        biodata.setAge(Age);
-        biodata.setGender(gender);
-        biodata.setMartialStatus(martial);
-        biodata.setSalary(Salary);
-        biodata.setDateofJoining(Date);
-        biodata.setBloodgroup(BloodGroup);
-        biodata.setUsername(Username);
-        biodata.setPassword(Password);
-        biodata.setAddress(Address);
-        
-        
-          desk.addList(biodata);
-        
+        if(biodata.setDeskID(DPID) && biodata.setName(Name)&& biodata.setContactNumber(PhoneNumber)&& biodata.setEmail(Email)&& biodata.setCNIC(CNIC)&&biodata.setAge(Age)&& biodata.setSalary(Salary)&& biodata.setUsername(Username) && biodata.setPassword(Password))
+        {
+            biodata.setGender(gender);
+            biodata.setMartialStatus(martial);
+            biodata.setDateofJoining(Date);
+            biodata.setBloodgroup(BloodGroup);
+            biodata.setAddress(Address);
+            desk.addList(biodata);
+            JOptionPane.showMessageDialog(null, "Desk Person Added!");
+            clearField();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Desk Person Not Added!!"+"\n"+"Reconsider the inputs");
+        }
         
         dtm.setRowCount(0);
             for(int i=0; i<desk.desklist.size(); i++)
@@ -1129,7 +1137,8 @@ public class DeskPerson extends javax.swing.JFrame {
             Object[] objs = {desk.desklist.get(i).getDeskID(), desk.desklist.get(i).getName(), desk.desklist.get(i).getEmail(), desk.desklist.get(i).getContactNumber(),  desk.desklist.get(i).getCNIC(), desk.desklist.get(i).getAge(), desk.desklist.get(i).getGender(), desk.desklist.get(i).getMartialStatus(), desk.desklist.get(i).getSalary(), desk.desklist.get(i).getDateofJoining(),desk.desklist.get(i).getBloodgroup(), desk.desklist.get(i).getAddress(), desk.desklist.get(i).getUsername(), desk.desklist.get(i).getPassword()};
             dtm.addRow(objs);
             }
-            clearField();
+            
+           
         
         
      
@@ -1384,34 +1393,35 @@ public class DeskPerson extends javax.swing.JFrame {
 
     private void emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_emailKeyTyped
         // TODO add your handling code here:
-        /* icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
-        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
-        String Email= email.getText();
-        boolean test=false;
-        int index = 0;
-        char[] ch = new char[Email.length()];
-        
-        if (ch[0] == '@') {
-            test= false;
-        } else {
-            for (int i = 1; i < Email.length(); i++) {
-                if (ch[i] == '@') {
-                    index = i;
-                    break;
-                }
-            }
-            if (ch[index] == '.') {
-               test = false;
-            }
-        }
-        if (test== true) {
-            e.setIcon(icon2);
-            
-        } else {
-           e.setIcon(icon);
-
-        }
-        */
+//        icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+//        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+//       
+//        String Email= email.getText();
+//        boolean test=false;
+//        int index = 0;
+//        char[] ch = new char[Email.length()];
+//        
+//        if (ch[0] == '@') {
+//            test= false;
+//        } else {
+//            for (int i = 1; i < Email.length(); i++) {
+//                if (ch[i] == '@') {
+//                    index = i;
+//                    break;
+//                }
+//            }
+//            if (ch[index] == '.') {
+//               test = false;
+//            }
+//        }
+//        if (test== true) {
+//            e.setIcon(icon2);
+//            
+//        } else {
+//           e.setIcon(icon);
+//
+//        }
+       
     }//GEN-LAST:event_emailKeyTyped
 
     private void cnKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cnKeyTyped
@@ -1461,15 +1471,17 @@ public class DeskPerson extends javax.swing.JFrame {
         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
         icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
         char c= evt.getKeyChar();
-        if(Character.isLetter(c))
+        if(Character.isDigit(c))
         {
-            age.setEditable(false);
-            a.setIcon(icon);
+            age.setEditable(true); 
+           a.setIcon(icon2);
+            
         }
         else
         {
-           age.setEditable(true); 
-           a.setIcon(icon2);
+            age.setEditable(true);
+            a.setIcon(icon);
+           
         }
     }//GEN-LAST:event_ageKeyTyped
 
@@ -1538,15 +1550,15 @@ public class DeskPerson extends javax.swing.JFrame {
         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
         icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
       char c= evt.getKeyChar();
-        if(Character.isLetter(c))
-        {
-            salary.setEditable(false);
-            sal.setIcon(icon);
-        }
-        else
+        if(Character.isDigit(c) )
         {
            salary.setEditable(true); 
            sal.setIcon(icon2);
+        }
+        else
+        {
+            salary.setEditable(true);
+            sal.setIcon(icon);
         }  
         
     }//GEN-LAST:event_salaryKeyTyped
@@ -1751,6 +1763,15 @@ public class DeskPerson extends javax.swing.JFrame {
        
        
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void naKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_naKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_naKeyTyped
+
+    private void salaryMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_salaryMouseEntered
+        // TODO add your handling code here:
+        //salary.setText("");
+    }//GEN-LAST:event_salaryMouseEntered
 
     /**
      * @param args the command line arguments
