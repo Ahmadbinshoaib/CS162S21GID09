@@ -1289,6 +1289,15 @@ private void clearField()
 
     private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
         // TODO add your handling code here:
+        boolean flag = false;
+        flag=desk.saveIndustrialManager();
+        if(flag==true)
+        {
+            JOptionPane.showMessageDialog(null, "The Industrial Manager data has been saved to file");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "The Industrial Manager data has not been saved");
+        }
     }//GEN-LAST:event_jLabel27MouseClicked
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked

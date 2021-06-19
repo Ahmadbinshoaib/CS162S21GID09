@@ -167,6 +167,26 @@ public class HealthCareSystem {
        imlist.set(a,b);
        
    }
+   
+   public boolean saveIndustrialManager() 
+    {
+        try (FileWriter fw = new FileWriter("IndustrialManagers.txt",false);){
+            
+            for(int i = 0 ; i< imlist.size() ; i++ )
+          {
+            fw.write(imlist.get(i).getIMID()+","+imlist.get(i).getName()+","+imlist.get(i).getContactNumber()+","+ imlist.get(i).getEmail()+","+ imlist.get(i).getCNIC()+","+ imlist.get(i).getAge() +","+ imlist.get(i).getGender()+","+ imlist.get(i).getMartialStatus()+
+                            ","+ imlist.get(i).getSalary()+","+ imlist.get(i).getDateofJoining()+","+ imlist.get(i).getBloodgroup()+","+ imlist.get(i).getAddress()+","+imlist.get(i).getUsername()+","+ imlist.get(i).getPassword()+","+imlist.get(i).getDesignation()+"\n"  ) ; 
+          }
+         fw.flush();
+         fw.close();
+         return true;
+          
+        } catch (Exception e) {
+            return false;
+        }
+ 
+    }
+   
     
     public void addIW( IndWorker a)
     {
