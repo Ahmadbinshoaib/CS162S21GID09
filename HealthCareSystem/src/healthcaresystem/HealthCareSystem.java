@@ -19,6 +19,8 @@ public class HealthCareSystem {
     
     public List<DeskPersonal>desklist= new ArrayList<>();
     public List<IndManager>imlist= new ArrayList<>();
+    public List<IndWorker>iwlist= new ArrayList<>();
+    
     public static HealthCareSystem getInstance(){
         if(instance==null)
         {
@@ -77,5 +79,20 @@ public class HealthCareSystem {
        
    }
     
+    public void addIW( IndWorker a)
+    {
+        iwlist.add(a);
+    }
+    
+   public void deleteIW(int a)
+   {
+      iwlist.remove(a);
+   }
+   
+   public void updateIW(IndWorker b, int a)
+   {
+       iwlist.set(a,b);
+       
+   }
     
 }

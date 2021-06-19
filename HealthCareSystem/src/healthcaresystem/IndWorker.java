@@ -9,15 +9,15 @@ package healthcaresystem;
  *
  * @author Maria
  */
-public class IndManager extends ManagingStaff{
+public class IndWorker  extends ManagingStaff {
     private String Salary;
     private String Username;
     private String password;
     private String MartialStatus;
     private String DateofJoining;
     private String Age;
-    private String IMID;
-    private String Designation;
+    private String IWID;
+    private String Labour;
     /**
      * @return the DateofJoining
      */
@@ -35,19 +35,19 @@ public class IndManager extends ManagingStaff{
     /**
      * @return the DeskID
      */
-    public String getIMID() {
-        return IMID;
+    public String getIWID() {
+        return IWID;
     }
 
     /**
      * @param DeskID the DeskID to set
      */
-    public boolean setIMID(String IMID) {
+    public boolean setIWID(String IWID) {
         boolean flag= false;
         int count=0;
-        int len= IMID.length();
+        int len= IWID.length();
         char [] aEmployeeID= new char [len];
-        aEmployeeID= IMID.toCharArray();
+        aEmployeeID= IWID.toCharArray();
         if(len==7)
         {
             if(aEmployeeID[0]>='A' && aEmployeeID[0]<='Z' && aEmployeeID[1]>='A' && aEmployeeID[1]<='Z' && aEmployeeID[2]>='A' && aEmployeeID[2]<='Z')
@@ -66,7 +66,7 @@ public class IndManager extends ManagingStaff{
      
             if(count==3)
             {
-                this.IMID = IMID;
+                this.IWID = IWID;
                 flag=true;
             }
         }
@@ -191,13 +191,13 @@ public class IndManager extends ManagingStaff{
     }
     
    
-    public String getDesignation() {
-       return Designation; //To change body of generated methods, choose Tools | Templates.
+    public String getLabour() {
+       return Labour; //To change body of generated methods, choose Tools | Templates.
     }
 
     
-    public void setDesignation(String Designation) {
-        this.Designation= Designation; //To change body of generated methods, choose Tools | Templates.
+    public void setLabour(String Labour) {
+        this.Labour= Labour; //To change body of generated methods, choose Tools | Templates.
     }
     
 }

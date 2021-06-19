@@ -124,7 +124,7 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
         jLabel29 = new javax.swing.JLabel();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        designation = new javax.swing.JComboBox<>();
         jSeparator15 = new javax.swing.JSeparator();
         date = new javax.swing.JTextField();
         i = new javax.swing.JLabel();
@@ -596,7 +596,12 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
 
         jLabel31.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_sitting_on_chair_35px_2.png"))); // NOI18N
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Designation" }));
+        designation.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Designation" }));
+        designation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                designationMousePressed(evt);
+            }
+        });
 
         jSeparator15.setForeground(new java.awt.Color(64, 25, 82));
 
@@ -691,7 +696,7 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(designation, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(des, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 270, Short.MAX_VALUE))
@@ -915,12 +920,6 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
                                 .addGap(10, 10, 10)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addGap(0, 1, Short.MAX_VALUE)
-                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(125, 125, 125))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -933,10 +932,7 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
                                                         .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGap(15, 15, 15))
                                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(pas, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addGap(37, 37, 37)
                                                 .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGap(8, 8, 8)
@@ -959,10 +955,20 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(des, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addComponent(designation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                         .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGap(0, 0, Short.MAX_VALUE))))))
+                                                .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                        .addGap(0, 1, Short.MAX_VALUE)
+                                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(pas, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(125, 125, 125))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -1114,7 +1120,7 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
         String Username= username.getText();
         String Password= pas.getText();
         String Address= address.getText();
-        
+        String Designation= designation.getSelectedItem().toString();
         if(biodata.setIMID(DPID) && biodata.setName(Name)&& biodata.setContactNumber(PhoneNumber)&& biodata.setEmail(Email)&& biodata.setCNIC(CNIC)&&biodata.setAge(Age)&& biodata.setSalary(Salary)&& biodata.setUsername(Username) && biodata.setPassword(Password))
         {
             biodata.setGender(gender);
@@ -1122,6 +1128,7 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
             biodata.setDateofJoining(Date);
             biodata.setBloodgroup(BloodGroup);
             biodata.setAddress(Address);
+            biodata.setDesignation(Designation);
             desk.addIM(biodata);
             JOptionPane.showMessageDialog(null, "Industrial Manager Added!");
             clearField();
@@ -1167,6 +1174,7 @@ private void clearField()
      us.setIcon(null);
      p.setIcon(null);
      ad.setIcon(null);
+     des.setIcon(null);
      
    
  }
@@ -1681,6 +1689,14 @@ private void clearField()
         pas.setText(dtm.getValueAt(row, 13).toString());
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void designationMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_designationMousePressed
+        // TODO add your handling code here:
+         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+
+        des.setIcon(icon2);
+    }//GEN-LAST:event_designationMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -1729,12 +1745,12 @@ private void clearField()
     private javax.swing.JTextField cn;
     private javax.swing.JTextField date;
     private javax.swing.JLabel des;
+    private javax.swing.JComboBox<String> designation;
     private javax.swing.JLabel e;
     private javax.swing.JTextField email;
     private javax.swing.JLabel gen;
     private javax.swing.JLabel i;
     private javax.swing.JTextField id;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
