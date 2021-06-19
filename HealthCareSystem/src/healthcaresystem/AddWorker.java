@@ -476,6 +476,9 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel23MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel23MouseEntered(evt);
+            }
         });
 
         jLabel24.setBackground(new java.awt.Color(255, 255, 255));
@@ -1125,6 +1128,7 @@ HealthCareSystem desk= HealthCareSystem.getInstance();
             biodata.setAddress(Address);
             biodata.setLabour(Designation);
             desk.addIW(biodata);
+            desk.saveWorker();
             JOptionPane.showMessageDialog(null, "Industrial Worker Added!");
             clearField();
         }
@@ -1280,6 +1284,15 @@ private void clearField()
 
     private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
         // TODO add your handling code here:
+        boolean flag = false;
+        flag=desk.saveWorker();
+        if(flag==true)
+        {
+            JOptionPane.showMessageDialog(null, "The Industrial Worker data has been saved to file");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "The Industrial Worker data has not been saved");
+        }
     }//GEN-LAST:event_jLabel27MouseClicked
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
@@ -1750,6 +1763,10 @@ private void clearField()
         username.setText(dtm.getValueAt(row, 12).toString());
         pas.setText(dtm.getValueAt(row, 13).toString());
     }//GEN-LAST:event_jTable1MouseClicked
+
+    private void jLabel23MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel23MouseEntered
 
     /**
      * @param args the command line arguments

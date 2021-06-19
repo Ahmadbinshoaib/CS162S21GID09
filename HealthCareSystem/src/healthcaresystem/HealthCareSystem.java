@@ -59,6 +59,8 @@ public class HealthCareSystem {
         h.loadDeskPerson();
         h.loadDoctor();
         h.loadPharmacist();
+        h.loadIndustrialManager();
+        h.loadWorker();
         EKnowMain a= new EKnowMain();
         a.setVisible(true);
         
@@ -187,6 +189,56 @@ public class HealthCareSystem {
  
     }
    
+   
+   public void loadIndustrialManager() 
+    {
+        
+        try {
+            
+            FileReader fr = null;
+            try {
+                fr = new FileReader("IndustrialManagers.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BufferedReader br = new BufferedReader(fr);
+            
+            String read = br.readLine();
+            while(read!=null){
+                String []array=read.split(",");
+                
+                IndManager s = new IndManager();
+                s.setIMID(array[0]);
+                s.setName(array[1]);
+                s.setContactNumber(array[2]);
+                s.setEmail(array[3]);
+                s.setCNIC(array[4]);
+                s.setAge(array[5]);
+                s.setGender(array[6]);
+                s.setMartialStatus(array[7]);
+                s.setSalary(array[8]);
+                s.setDateofJoining(array[9]);
+                s.setBloodgroup(array[10]);
+                s.setAddress(array[11]);
+                s.setUsername(array[12]);
+                s.setPassword(array[13]);
+                s.setDesignation(array[14]);
+                
+               this.imlist.add(s);
+               
+                
+                read =br.readLine();
+                
+            }
+            fr.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+            
+        }
     
     public void addIW( IndWorker a)
     {
@@ -203,6 +255,75 @@ public class HealthCareSystem {
        iwlist.set(a,b);
        
    }
+   
+   public boolean saveWorker() 
+    {
+        try (FileWriter fw = new FileWriter("Workers.txt",false);){
+            
+            for(int i = 0 ; i< iwlist.size() ; i++ )
+          {
+            fw.write(iwlist.get(i).getIWID()+","+iwlist.get(i).getName()+","+iwlist.get(i).getContactNumber()+","+ iwlist.get(i).getEmail()+","+ iwlist.get(i).getCNIC()+","+ iwlist.get(i).getAge() +","+ iwlist.get(i).getGender()+","+ iwlist.get(i).getMartialStatus()+
+                            ","+ iwlist.get(i).getSalary()+","+ iwlist.get(i).getDateofJoining()+","+ iwlist.get(i).getBloodgroup()+","+ iwlist.get(i).getAddress()+","+iwlist.get(i).getUsername()+","+ iwlist.get(i).getPassword()+","+iwlist.get(i).getLabour()+"\n"  ) ; 
+          }
+         fw.flush();
+         fw.close();
+         return true;
+          
+        } catch (Exception e) {
+            return false;
+        }
+ 
+    }
+   
+   public void loadWorker() 
+    {
+        
+        try {
+            
+            FileReader fr = null;
+            try {
+                fr = new FileReader("Workers.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BufferedReader br = new BufferedReader(fr);
+            
+            String read = br.readLine();
+            while(read!=null){
+                String []array=read.split(",");
+                
+                IndWorker s = new IndWorker();
+                s.setIWID(array[0]);
+                s.setName(array[1]);
+                s.setContactNumber(array[2]);
+                s.setEmail(array[3]);
+                s.setCNIC(array[4]);
+                s.setAge(array[5]);
+                s.setGender(array[6]);
+                s.setMartialStatus(array[7]);
+                s.setSalary(array[8]);
+                s.setDateofJoining(array[9]);
+                s.setBloodgroup(array[10]);
+                s.setAddress(array[11]);
+                s.setUsername(array[12]);
+                s.setPassword(array[13]);
+                s.setLabour(array[14]);
+                
+               this.iwlist.add(s);
+               
+                
+                read =br.readLine();
+                
+            }
+            fr.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+            
+        }
    
    public void addD( Doctor a)
     {
