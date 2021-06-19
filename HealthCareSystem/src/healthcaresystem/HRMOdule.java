@@ -693,7 +693,7 @@ public class HRMOdule extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         // TODO add your handling code here:
-        Reports r = new Reports();
+        Report r = new Report();
         r.setVisible(true);
         
         

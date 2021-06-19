@@ -1251,12 +1251,13 @@ private void clearField()
 
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
         // TODO add your handling code here:
-        String input= JOptionPane.showInputDialog(this,"Enter Desk Person ID to search: ");
+        String input= JOptionPane.showInputDialog(this,"Enter Industrial Worker ID to search: ");
          
             for(int i=0; i<desk.iwlist.size(); i++){
             if(desk.iwlist.get(i).getIWID().equalsIgnoreCase(input))
             {
-              JOptionPane.showMessageDialog(this,"Found "); 
+              JOptionPane.showMessageDialog(this,"Found ");
+              id1.setText(desk.iwlist.get(i).getIWID());
               name1.setText(desk.iwlist.get(i).getName());
               pho.setText(desk.iwlist.get(i).getContactNumber());
               email.setText(desk.iwlist.get(i).getEmail());
