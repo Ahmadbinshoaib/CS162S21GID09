@@ -69,12 +69,12 @@ public abstract class ManagingStaff extends Person{
     }
 
     @Override
-    public boolean setName(String name) {
+    public boolean setName(String Name) {
         boolean flag= true;   
     int count=0;
-    int len= name.length();
+    int len= Name.length();
     char[] aname= new char[len];
-    aname= name.toCharArray();
+    aname= Name.toCharArray();
     if(len<=50)
     {
     for(int i=0; i<len; i++)

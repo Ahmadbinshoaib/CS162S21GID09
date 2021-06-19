@@ -8,18 +8,44 @@ package healthcaresystem;
 import static healthcaresystem.DeskPerson.icon;
 import static healthcaresystem.DeskPerson.icon2;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author hp
  */
 public class AddIndustrialManager extends javax.swing.JFrame {
-
+IndManager biodata= new IndManager();
+HealthCareSystem desk= HealthCareSystem.getInstance();
+    
+        String DPID;
+        String Name;
+        String PhoneNumber;
+        String Email;
+        String CNIC;       
+        String Age;
+        String gender;
+        String martial;
+        String Salary;    
+        String Date;
+        String BloodGroup;
+        String Username;
+        String Password;
+        String Address;
+        String Designation;
+    
+    String header[] = new String[] {"ID", "Name", "Email", "Phone Number", "CNIC","Age", "Gender", "Martial", "Salray", "Date", "Blood Group", "Address", "Username", "Password", "Designation"};
+    DefaultTableModel dtm;
+    int row,col;
     /**
      * Creates new form AddIndustrialManager
      */
     public AddIndustrialManager() {
         initComponents();
+        dtm= new DefaultTableModel(header,0);
+        jTable1.setModel(dtm);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,6 +57,8 @@ public class AddIndustrialManager extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,10 +86,10 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
         pho = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         cn = new javax.swing.JTextField();
         age = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
+        salary = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
@@ -80,14 +108,13 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jSeparator11 = new javax.swing.JSeparator();
-        jTextField8 = new javax.swing.JTextField();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
+        pas = new javax.swing.JTextField();
         jSeparator12 = new javax.swing.JSeparator();
         jSeparator13 = new javax.swing.JSeparator();
         jSeparator14 = new javax.swing.JSeparator();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        address = new javax.swing.JTextArea();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -99,7 +126,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         jLabel31 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jSeparator15 = new javax.swing.JSeparator();
-        jTextField12 = new javax.swing.JTextField();
+        date = new javax.swing.JTextField();
         i = new javax.swing.JLabel();
         na = new javax.swing.JLabel();
         ph = new javax.swing.JLabel();
@@ -114,6 +141,8 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         us = new javax.swing.JLabel();
         p = new javax.swing.JLabel();
         ad = new javax.swing.JLabel();
+        blood = new javax.swing.JComboBox<>();
+        des = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -224,6 +253,11 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTable1);
 
         jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_name_35px.png"))); // NOI18N
@@ -273,12 +307,12 @@ public class AddIndustrialManager extends javax.swing.JFrame {
             }
         });
 
-        jTextField5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
-        jTextField5.setText("E-mail");
-        jTextField5.setBorder(null);
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        email.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        email.setText("E-mail");
+        email.setBorder(null);
+        email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                emailActionPerformed(evt);
             }
         });
 
@@ -309,11 +343,16 @@ public class AddIndustrialManager extends javax.swing.JFrame {
             }
         });
 
-        jTextField10.setText("Salary");
-        jTextField10.setBorder(null);
-        jTextField10.addActionListener(new java.awt.event.ActionListener() {
+        salary.setText("Salary");
+        salary.setBorder(null);
+        salary.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField10ActionPerformed(evt);
+                salaryActionPerformed(evt);
+            }
+        });
+        salary.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                salaryKeyTyped(evt);
             }
         });
 
@@ -323,45 +362,75 @@ public class AddIndustrialManager extends javax.swing.JFrame {
 
         jSeparator6.setForeground(new java.awt.Color(64, 25, 82));
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
         jRadioButton1.setForeground(new java.awt.Color(64, 25, 82));
         jRadioButton1.setText("Male");
         jRadioButton1.setOpaque(false);
+        jRadioButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton1MouseClicked(evt);
+            }
+        });
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
         jRadioButton2.setForeground(new java.awt.Color(64, 25, 82));
         jRadioButton2.setText("Other");
         jRadioButton2.setOpaque(false);
+        jRadioButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton2MouseClicked(evt);
+            }
+        });
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton2ActionPerformed(evt);
             }
         });
 
+        buttonGroup1.add(jRadioButton3);
         jRadioButton3.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
         jRadioButton3.setForeground(new java.awt.Color(64, 25, 82));
         jRadioButton3.setText("Female");
         jRadioButton3.setOpaque(false);
+        jRadioButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton3MouseClicked(evt);
+            }
+        });
         jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton3ActionPerformed(evt);
             }
         });
 
+        buttonGroup2.add(jRadioButton4);
         jRadioButton4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
         jRadioButton4.setForeground(new java.awt.Color(64, 25, 82));
         jRadioButton4.setText("Married");
         jRadioButton4.setOpaque(false);
+        jRadioButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton4MouseClicked(evt);
+            }
+        });
         jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton4ActionPerformed(evt);
             }
         });
 
+        buttonGroup2.add(jRadioButton5);
         jRadioButton5.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
         jRadioButton5.setForeground(new java.awt.Color(64, 25, 82));
         jRadioButton5.setText("Single");
         jRadioButton5.setOpaque(false);
+        jRadioButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jRadioButton5MouseClicked(evt);
+            }
+        });
         jRadioButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRadioButton5ActionPerformed(evt);
@@ -388,30 +457,31 @@ public class AddIndustrialManager extends javax.swing.JFrame {
 
         jSeparator11.setForeground(new java.awt.Color(64, 25, 82));
 
-        jTextField8.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
-        jTextField8.setText("Blood Group");
-        jTextField8.setBorder(null);
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        username.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        username.setText("Username");
+        username.setBorder(null);
+        username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                usernameActionPerformed(evt);
+            }
+        });
+        username.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                usernameKeyTyped(evt);
             }
         });
 
-        jTextField9.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
-        jTextField9.setText("Username");
-        jTextField9.setBorder(null);
-        jTextField9.addActionListener(new java.awt.event.ActionListener() {
+        pas.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        pas.setText("Password");
+        pas.setBorder(null);
+        pas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField9ActionPerformed(evt);
+                pasActionPerformed(evt);
             }
         });
-
-        jTextField11.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
-        jTextField11.setText("Password");
-        jTextField11.setBorder(null);
-        jTextField11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField11ActionPerformed(evt);
+        pas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                pasKeyTyped(evt);
             }
         });
 
@@ -421,15 +491,20 @@ public class AddIndustrialManager extends javax.swing.JFrame {
 
         jSeparator14.setForeground(new java.awt.Color(64, 25, 82));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
-        jTextArea1.setForeground(new java.awt.Color(64, 25, 82));
-        jTextArea1.setRows(5);
-        jTextArea1.setText("123 Main Street, New York, NY 10030");
-        jTextArea1.setCaretColor(new java.awt.Color(64, 25, 82));
-        jTextArea1.setDisabledTextColor(new java.awt.Color(64, 25, 82));
-        jTextArea1.setSelectionColor(new java.awt.Color(64, 25, 82));
-        jScrollPane2.setViewportView(jTextArea1);
+        address.setColumns(20);
+        address.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 12)); // NOI18N
+        address.setForeground(new java.awt.Color(64, 25, 82));
+        address.setRows(5);
+        address.setText("123 Main Street, New York, NY 10030");
+        address.setCaretColor(new java.awt.Color(64, 25, 82));
+        address.setDisabledTextColor(new java.awt.Color(64, 25, 82));
+        address.setSelectionColor(new java.awt.Color(64, 25, 82));
+        address.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                addressKeyTyped(evt);
+            }
+        });
+        jScrollPane2.setViewportView(address);
 
         jLabel23.setBackground(new java.awt.Color(255, 255, 255));
         jLabel23.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -525,12 +600,28 @@ public class AddIndustrialManager extends javax.swing.JFrame {
 
         jSeparator15.setForeground(new java.awt.Color(64, 25, 82));
 
-        jTextField12.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
-        jTextField12.setText("Date of Joining");
-        jTextField12.setBorder(null);
-        jTextField12.addActionListener(new java.awt.event.ActionListener() {
+        date.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 11)); // NOI18N
+        date.setText("Date of Joining");
+        date.setBorder(null);
+        date.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField12ActionPerformed(evt);
+                dateActionPerformed(evt);
+            }
+        });
+        date.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                dateKeyTyped(evt);
+            }
+        });
+
+        blood.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A+", "O+", "B+", "AB+", "A-", "O-", "B-", "AB-" }));
+        blood.setOpaque(false);
+        blood.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bloodMouseClicked(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                bloodMousePressed(evt);
             }
         });
 
@@ -560,7 +651,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                         .addComponent(jSeparator7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
                                         .addComponent(jSeparator12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(cal, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel2Layout.createSequentialGroup()
@@ -575,8 +666,8 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(blood, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(8, 8, 8)
                                         .addComponent(bl, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(jLabel10)
@@ -599,8 +690,11 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(des, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 270, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel17)
                         .addGap(18, 18, 18)
@@ -613,7 +707,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                 .addComponent(jLabel11)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                         .addComponent(jRadioButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(jSeparator5, javax.swing.GroupLayout.DEFAULT_SIZE, 164, Short.MAX_VALUE)
@@ -636,7 +730,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(salary, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(sal, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -645,7 +739,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(pas, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -681,7 +775,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                 .addComponent(us, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -770,7 +864,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(e, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -812,7 +906,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(sal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(salary, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jSeparator10, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
@@ -834,13 +928,13 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                                     .addGroup(jPanel2Layout.createSequentialGroup()
                                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                                             .addComponent(us, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                                         .addComponent(jSeparator13, javax.swing.GroupLayout.PREFERRED_SIZE, 2, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGap(15, 15, 15))
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                    .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(pas, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addComponent(p, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jSeparator14, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -849,8 +943,8 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                                     .addComponent(bl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGroup(jPanel2Layout.createSequentialGroup()
-                                                        .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(blood, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(5, 5, 5)
                                                         .addComponent(jSeparator11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(jPanel2Layout.createSequentialGroup()
@@ -862,9 +956,12 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                                         .addGap(8, 8, 8))))
                                             .addGroup(jPanel2Layout.createSequentialGroup()
                                                 .addGap(10, 10, 10)
-                                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(des, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                        .addComponent(jSeparator15, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGap(0, 0, Short.MAX_VALUE))))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -874,7 +971,7 @@ public class AddIndustrialManager extends javax.swing.JFrame {
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(cal, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jTextField12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGap(21, 21, 21)))
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -949,9 +1046,9 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_phoActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void emailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emailActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_emailActionPerformed
 
     private void cnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnActionPerformed
         // TODO add your handling code here:
@@ -961,9 +1058,9 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ageActionPerformed
 
-    private void jTextField10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField10ActionPerformed
+    private void salaryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salaryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField10ActionPerformed
+    }//GEN-LAST:event_salaryActionPerformed
 
     private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
         // TODO add your handling code here:
@@ -981,38 +1078,204 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jRadioButton5ActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_usernameActionPerformed
 
-    private void jTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField9ActionPerformed
+    private void pasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField9ActionPerformed
-
-    private void jTextField11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField11ActionPerformed
+    }//GEN-LAST:event_pasActionPerformed
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
         // TODO add your handling code here:
-        setVisible(false);
-        HRMOdule a= new HRMOdule();
-        a.setVisible(true);
-        /*
-        LogIn a= new LogIn();
-        a.setVisible(false);*/
+       boolean flag= true;
+        biodata= new IndManager();
+        String DPID= id.getText();
+        String Name= name1.getText();
+        String PhoneNumber= pho.getText();
+        String Email=email.getText();
+        String CNIC =cn.getText();       
+        String Age= age.getText();
+        
+        jRadioButton1.setActionCommand("Male");
+        jRadioButton2.setActionCommand("Others");
+        jRadioButton3.setActionCommand("Female"); 
+        
+        String gender= buttonGroup1.getSelection().getActionCommand();
+        
+        jRadioButton4.setActionCommand("Married");
+        jRadioButton5.setActionCommand("Single");
+        
+        String martial= buttonGroup2.getSelection().getActionCommand();
+           
+        String Salary= salary.getText();    
+        String Date= date.getText();
+        String BloodGroup= blood.getSelectedItem().toString();
+        String Username= username.getText();
+        String Password= pas.getText();
+        String Address= address.getText();
+        
+        if(biodata.setIMID(DPID) && biodata.setName(Name)&& biodata.setContactNumber(PhoneNumber)&& biodata.setEmail(Email)&& biodata.setCNIC(CNIC)&&biodata.setAge(Age)&& biodata.setSalary(Salary)&& biodata.setUsername(Username) && biodata.setPassword(Password))
+        {
+            biodata.setGender(gender);
+            biodata.setMartialStatus(martial);
+            biodata.setDateofJoining(Date);
+            biodata.setBloodgroup(BloodGroup);
+            biodata.setAddress(Address);
+            desk.addIM(biodata);
+            JOptionPane.showMessageDialog(null, "Industrial Manager Added!");
+            clearField();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Desk Person Not Added!"+"\n"+"Reconsider the inputs");
+        }
+        
+        dtm.setRowCount(0);
+            for(int i=0; i<desk.imlist.size(); i++)
+            {
+                
+            Object[] objs = {desk.imlist.get(i).getIMID(), desk.imlist.get(i).getName(), desk.imlist.get(i).getEmail(), desk.imlist.get(i).getContactNumber(),  desk.imlist.get(i).getCNIC(), desk.imlist.get(i).getAge(), desk.imlist.get(i).getGender(), desk.imlist.get(i).getMartialStatus(), desk.imlist.get(i).getSalary(), desk.imlist.get(i).getDateofJoining(),desk.imlist.get(i).getBloodgroup(), desk.imlist.get(i).getAddress(), desk.imlist.get(i).getUsername(), desk.imlist.get(i).getPassword(), desk.imlist.get(i).getDesignation()};
+            dtm.addRow(objs);
+            }
     }//GEN-LAST:event_jLabel23MouseClicked
-
+private void clearField()
+ {
+     id.setText("Enter Desk Person ID");
+     name1.setText("Name");
+     pho.setText("Phone Number");
+     email.setText("E-mail");
+     cn.setText("CNIC");
+     age.setText("Age");
+     salary.setText("Salary");
+     date.setText("Date of Joining");
+     username.setText("Username");
+     pas.setText("Password");
+     address.setText("123 Main Street, New York, NY 10030");
+     
+     i.setIcon(null);
+     na.setIcon(null);
+     ph.setIcon(null);
+     e.setIcon(null);
+     wao.setIcon(null);
+     a.setIcon(null);
+     gen.setIcon(null);
+     ma.setIcon(null);
+     sal.setIcon(null);
+     cal.setIcon(null);
+     bl.setIcon(null);
+     us.setIcon(null);
+     p.setIcon(null);
+     ad.setIcon(null);
+     
+   
+ }
     private void jLabel24MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel24MouseClicked
         // TODO add your handling code here:
+         int dialogButton= JOptionPane.YES_NO_OPTION;
+        int dialogResult= JOptionPane.showConfirmDialog(this, "Delete this data", "Delete", dialogButton);
+        if(dialogResult==0)
+        {
+            //dtm.removeRow(row);
+            desk.deleteIM(row);
+            dtm.setRowCount(0);
+            for(int i=0; i<desk.imlist.size(); i++)
+            {
+                
+            Object[] objs = {desk.imlist.get(i).getIMID(), desk.imlist.get(i).getName(), desk.imlist.get(i).getEmail(), desk.imlist.get(i).getContactNumber(),  desk.imlist.get(i).getCNIC(), desk.imlist.get(i).getAge(), desk.imlist.get(i).getGender(), desk.imlist.get(i).getMartialStatus(), desk.imlist.get(i).getSalary(), desk.imlist.get(i).getDateofJoining(),desk.imlist.get(i).getBloodgroup(), desk.imlist.get(i).getAddress(), desk.imlist.get(i).getUsername(), desk.imlist.get(i).getPassword(), desk.imlist.get(i).getDesignation()};
+            dtm.addRow(objs);
+            }
+            clearField();
+            
+        }
     }//GEN-LAST:event_jLabel24MouseClicked
 
     private void jLabel25MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel25MouseClicked
         // TODO add your handling code here:
+        boolean flag= true;
+        biodata= new IndManager();
+        String DPID= id.getText();
+        String Name= name1.getText();
+        String PhoneNumber= pho.getText();
+        String Email=email.getText();
+        String CNIC =cn.getText();       
+        String Age= age.getText();
+        
+        jRadioButton1.setActionCommand("Male");
+        jRadioButton2.setActionCommand("Others");
+        jRadioButton3.setActionCommand("Female"); 
+        
+        String gender= buttonGroup1.getSelection().getActionCommand();
+        
+        jRadioButton4.setActionCommand("Married");
+        jRadioButton5.setActionCommand("Single");
+        
+        String martial= buttonGroup2.getSelection().getActionCommand();
+           
+        String Salary= salary.getText();    
+        String Date= date.getText();
+        String BloodGroup= blood.getSelectedItem().toString();
+        String Username= username.getText();
+        String Password= pas.getText();
+        String Address= address.getText();
+        
+          
+           if(biodata.setIMID(DPID) && biodata.setName(Name)&& biodata.setContactNumber(PhoneNumber)&& biodata.setEmail(Email)&& biodata.setCNIC(CNIC)&&biodata.setAge(Age)&& biodata.setSalary(Salary)&& biodata.setUsername(Username) && biodata.setPassword(Password))
+        {
+            biodata.setGender(gender);
+            biodata.setMartialStatus(martial);
+            biodata.setDateofJoining(Date);
+            biodata.setBloodgroup(BloodGroup);
+            biodata.setAddress(Address);
+            desk.updateIM(biodata, row);
+            JOptionPane.showMessageDialog(null, "Industrial Manager Edited!");
+            clearField();
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null,"Industrial Manager Not Edited!"+"\n"+"Reconsider the inputs");
+        }
+        
+        dtm.setRowCount(0);
+            for(int i=0; i<desk.imlist.size(); i++)
+            {
+                
+            Object[] objs = {desk.imlist.get(i).getIMID(), desk.imlist.get(i).getName(), desk.imlist.get(i).getEmail(), desk.imlist.get(i).getContactNumber(),  desk.imlist.get(i).getCNIC(), desk.imlist.get(i).getAge(), desk.imlist.get(i).getGender(), desk.imlist.get(i).getMartialStatus(), desk.imlist.get(i).getSalary(), desk.imlist.get(i).getDateofJoining(),desk.imlist.get(i).getBloodgroup(), desk.imlist.get(i).getAddress(), desk.imlist.get(i).getUsername(), desk.imlist.get(i).getPassword(), desk.imlist.get(i).getDesignation()};
+            dtm.addRow(objs);
+            }
+        
+        
+        
+        
+        
     }//GEN-LAST:event_jLabel25MouseClicked
 
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
         // TODO add your handling code here:
+         String input= JOptionPane.showInputDialog(this,"Enter Desk Person ID to search: ");
+         
+            for(int i=0; i<desk.imlist.size(); i++){
+            if(desk.imlist.get(i).getIMID().equalsIgnoreCase(input))
+            {
+              JOptionPane.showMessageDialog(this,"Found "); 
+              name1.setText(desk.imlist.get(i).getName());
+              pho.setText(desk.imlist.get(i).getContactNumber());
+              email.setText(desk.imlist.get(i).getEmail());
+              cn.setText(desk.imlist.get(i).getCNIC());
+              age.setText(desk.imlist.get(i).getAge());
+              
+              
+              salary.setText(desk.imlist.get(i).getSalary());
+              date.setText(desk.imlist.get(i).getDateofJoining());
+              
+              username.setText(desk.imlist.get(i).getUsername());
+              pas.setText(desk.imlist.get(i).getPassword());
+              address.setText(desk.imlist.get(i).getAddress());
+               
+              
+            }
+            return;
+            }
     }//GEN-LAST:event_jLabel26MouseClicked
 
     private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
@@ -1041,9 +1304,9 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_jLabel30MouseClicked
 
-    private void jTextField12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField12ActionPerformed
+    private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField12ActionPerformed
+    }//GEN-LAST:event_dateActionPerformed
 
     private void idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_idKeyTyped
         // TODO add your handling code here:
@@ -1229,6 +1492,195 @@ public class AddIndustrialManager extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_ageKeyTyped
 
+    private void jRadioButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton1MouseClicked
+        // TODO add your handling code here:
+         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+        if(jRadioButton1.isSelected())
+        {
+         gen.setIcon(icon2); 
+        }
+    }//GEN-LAST:event_jRadioButton1MouseClicked
+
+    private void jRadioButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton3MouseClicked
+        // TODO add your handling code here:
+        icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+        if(jRadioButton3.isSelected())
+        {
+         gen.setIcon(icon2); 
+        }
+    }//GEN-LAST:event_jRadioButton3MouseClicked
+
+    private void jRadioButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton2MouseClicked
+        // TODO add your handling code here:
+        icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+        if(jRadioButton2.isSelected())
+        {
+         gen.setIcon(icon2); 
+        }
+    }//GEN-LAST:event_jRadioButton2MouseClicked
+
+    private void jRadioButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton4MouseClicked
+        // TODO add your handling code here:
+        icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+        if(jRadioButton4.isSelected())
+        {
+         ma.setIcon(icon2); 
+        }
+    }//GEN-LAST:event_jRadioButton4MouseClicked
+
+    private void jRadioButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jRadioButton5MouseClicked
+        // TODO add your handling code here:
+         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+        if(jRadioButton5.isSelected())
+        {
+         ma.setIcon(icon2); 
+        }
+    }//GEN-LAST:event_jRadioButton5MouseClicked
+
+    private void salaryKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_salaryKeyTyped
+        // TODO add your handling code here:
+         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+      char c= evt.getKeyChar();
+        if(Character.isDigit(c) )
+        {
+           salary.setEditable(true); 
+           sal.setIcon(icon2);
+        }
+        else
+        {
+            salary.setEditable(true);
+            sal.setIcon(icon);
+        }  
+        
+    }//GEN-LAST:event_salaryKeyTyped
+
+    private void dateKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dateKeyTyped
+        // TODO add your handling code here:
+        icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+        
+        
+        
+        int count=0;
+        String dates= date.getText();
+    int len= dates.length();
+    char[] da= new char[len];
+    da= dates.toCharArray();
+    if(len<=50)
+    {
+    for(int i=0; i<len; i++)
+    {
+      if((da[i]>='0' && da[i]<='9')  || da[i]=='-' )
+     {
+        count= count+1;
+     }
+      
+    }
+    
+    if(count==len)
+    {
+    
+    cal.setIcon(icon2);    
+    }
+    else
+    {
+       
+     cal.setIcon(icon);
+    }
+    }
+    }//GEN-LAST:event_dateKeyTyped
+
+    private void bloodMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bloodMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_bloodMouseClicked
+
+    private void bloodMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bloodMousePressed
+        // TODO add your handling code here:
+        icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+        icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+
+        bl.setIcon(icon2);
+    }//GEN-LAST:event_bloodMousePressed
+
+    private void usernameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameKeyTyped
+        // TODO add your handling code here:
+         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+    icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
+    String Username= username.getText();
+    int count=0;
+    int len= Username.length();
+    char[] aUsername= new char[len];
+    aUsername= Username.toCharArray();
+    if(len<=10)
+    {
+    for(int i=0; i<len; i++)
+    {
+      if((aUsername[i]>='A' && aUsername[i]<='Z') || (aUsername[i]>='a' && aUsername[i]<='z') || (aUsername[i]>='0' && aUsername[i]<='9') )
+     {
+        count= count+1;
+     }
+      
+    }
+    if(count==len)
+    {
+      us.setIcon(icon2);
+    }
+    else
+    {
+      us.setIcon(icon);
+    }
+    }
+    }//GEN-LAST:event_usernameKeyTyped
+
+    private void pasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pasKeyTyped
+        // TODO add your handling code here:
+         String pass= pas.getText();
+        int len= pass.length();
+    char[] apass= new char[len];
+    apass= pass.toCharArray();
+    if(len<=50)
+    {
+        p.setIcon(icon2);
+    }
+    }//GEN-LAST:event_pasKeyTyped
+
+    private void addressKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_addressKeyTyped
+        // TODO add your handling code here:
+        String add= address.getText();
+        int len= add.length();
+    char[] aad= new char[len];
+    
+    if(len<=100)
+    {
+        ad.setIcon(icon2);
+    }
+    }//GEN-LAST:event_addressKeyTyped
+
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        row= jTable1.getSelectedRow();
+        col= jTable1.getColumnCount();
+        //System.out.println(row+ " " + col);
+        id.setText(dtm.getValueAt(row, 0).toString());
+        name1.setText(dtm.getValueAt(row, 1).toString());
+        email.setText(dtm.getValueAt(row, 2).toString());
+        pho.setText(dtm.getValueAt(row, 3).toString());
+        cn.setText(dtm.getValueAt(row, 4).toString());
+        age.setText(dtm.getValueAt(row, 5).toString());
+        salary.setText(dtm.getValueAt(row, 8).toString());
+        date.setText(dtm.getValueAt(row, 9).toString());
+        address.setText(dtm.getValueAt(row, 11).toString());
+        username.setText(dtm.getValueAt(row, 12).toString());
+        pas.setText(dtm.getValueAt(row, 13).toString());
+    }//GEN-LAST:event_jTable1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -1267,11 +1719,18 @@ public class AddIndustrialManager extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel a;
     private javax.swing.JLabel ad;
+    private javax.swing.JTextArea address;
     private javax.swing.JTextField age;
     private javax.swing.JLabel bl;
+    private javax.swing.JComboBox<String> blood;
+    private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JLabel cal;
     private javax.swing.JTextField cn;
+    private javax.swing.JTextField date;
+    private javax.swing.JLabel des;
     private javax.swing.JLabel e;
+    private javax.swing.JTextField email;
     private javax.swing.JLabel gen;
     private javax.swing.JLabel i;
     private javax.swing.JTextField id;
@@ -1332,21 +1791,17 @@ public class AddIndustrialManager extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator8;
     private javax.swing.JSeparator jSeparator9;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField12;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JTextField jTextField9;
     private javax.swing.JLabel ma;
     private javax.swing.JLabel na;
     private javax.swing.JTextField name1;
     private javax.swing.JLabel p;
+    private javax.swing.JTextField pas;
     private javax.swing.JLabel ph;
     private javax.swing.JTextField pho;
     private javax.swing.JLabel sal;
+    private javax.swing.JTextField salary;
     private javax.swing.JLabel us;
+    private javax.swing.JTextField username;
     private javax.swing.JLabel wao;
     // End of variables declaration//GEN-END:variables
 }

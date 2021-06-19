@@ -858,8 +858,8 @@ public class DeskPerson extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(41, 41, 41)
+                        .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(58, 58, 58)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(i, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1291,6 +1291,13 @@ public class DeskPerson extends javax.swing.JFrame {
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
+        dtm.setRowCount(0);
+            for(int i=0; i<desk.imlist.size(); i++)
+            {
+                
+            Object[] objs = {desk.imlist.get(i).getIMID(), desk.imlist.get(i).getName(), desk.imlist.get(i).getEmail(), desk.imlist.get(i).getContactNumber(),  desk.imlist.get(i).getCNIC(), desk.imlist.get(i).getAge(), desk.imlist.get(i).getGender(), desk.imlist.get(i).getMartialStatus(), desk.imlist.get(i).getSalary(), desk.imlist.get(i).getDateofJoining(),desk.imlist.get(i).getBloodgroup(), desk.imlist.get(i).getAddress(), desk.imlist.get(i).getUsername(), desk.imlist.get(i).getPassword(), desk.imlist.get(i).getDesignation()};
+            dtm.addRow(objs);
+            }
         
     }//GEN-LAST:event_jLabel28MouseClicked
 

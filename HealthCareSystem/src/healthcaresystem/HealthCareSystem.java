@@ -18,7 +18,7 @@ public class HealthCareSystem {
     static HealthCareSystem a= new HealthCareSystem();
     
     public List<DeskPersonal>desklist= new ArrayList<>();
-    
+    public List<IndManager>imlist= new ArrayList<>();
     public static HealthCareSystem getInstance(){
         if(instance==null)
         {
@@ -41,6 +41,8 @@ public class HealthCareSystem {
         a.setVisible(true);
         
         
+        
+        
     }
     
     public void addList( DeskPersonal a)
@@ -56,6 +58,22 @@ public class HealthCareSystem {
    public void updateEmployee(DeskPersonal b, int a)
    {
        desklist.set(a,b);
+       
+   }
+   
+   public void addIM( IndManager a)
+    {
+        imlist.add(a);
+    }
+    
+   public void deleteIM(int a)
+   {
+      imlist.remove(a);
+   }
+   
+   public void updateIM(IndManager b, int a)
+   {
+       imlist.set(a,b);
        
    }
     
