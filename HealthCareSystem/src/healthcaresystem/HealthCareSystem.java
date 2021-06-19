@@ -20,6 +20,8 @@ public class HealthCareSystem {
     public List<DeskPersonal>desklist= new ArrayList<>();
     public List<IndManager>imlist= new ArrayList<>();
     public List<IndWorker>iwlist= new ArrayList<>();
+    public List<Doctor>dlist= new ArrayList<>();
+    public List<Pharmacist>plist= new ArrayList<>();
     
     public static HealthCareSystem getInstance(){
         if(instance==null)
@@ -94,5 +96,36 @@ public class HealthCareSystem {
        iwlist.set(a,b);
        
    }
+   
+   public void addD( Doctor a)
+    {
+        dlist.add(a);
+    }
     
+   public void deleteD(int a)
+   {
+      dlist.remove(a);
+   }
+   
+   public void updateD(Doctor b, int a)
+   {
+       dlist.set(a,b);
+       
+   }
+    
+   public void addP( Pharmacist a)
+    {
+        plist.add(a);
+    }
+    
+   public void deleteP(int a)
+   {
+      plist.remove(a);
+   }
+   
+   public void updateP(Pharmacist b, int a)
+   {
+       plist.set(a,b);
+       
+   }
 }

@@ -1258,12 +1258,14 @@ public class DeskPerson extends javax.swing.JFrame {
 
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
         // TODO add your handling code here:
-         String input= JOptionPane.showInputDialog(this,"Enter Desk Person ID to search: ");
+         String input= JOptionPane.showInputDialog("Enter Desk Person ID to search: ");
          
             for(int i=0; i<desk.desklist.size(); i++){
+                JOptionPane.showMessageDialog(null, i);
             if(desk.desklist.get(i).getDeskID().equalsIgnoreCase(input))
             {
-              JOptionPane.showMessageDialog(this,"Found "); 
+              JOptionPane.showMessageDialog(null, "Found "); 
+              id.setText(desk.desklist.get(i).getDeskID());
               name1.setText(desk.desklist.get(i).getName());
               pho.setText(desk.desklist.get(i).getContactNumber());
               email.setText(desk.desklist.get(i).getEmail());
@@ -1292,10 +1294,10 @@ public class DeskPerson extends javax.swing.JFrame {
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
         dtm.setRowCount(0);
-            for(int i=0; i<desk.imlist.size(); i++)
+            for(int i=0; i<desk.desklist.size(); i++)
             {
                 
-            Object[] objs = {desk.imlist.get(i).getIMID(), desk.imlist.get(i).getName(), desk.imlist.get(i).getEmail(), desk.imlist.get(i).getContactNumber(),  desk.imlist.get(i).getCNIC(), desk.imlist.get(i).getAge(), desk.imlist.get(i).getGender(), desk.imlist.get(i).getMartialStatus(), desk.imlist.get(i).getSalary(), desk.imlist.get(i).getDateofJoining(),desk.imlist.get(i).getBloodgroup(), desk.imlist.get(i).getAddress(), desk.imlist.get(i).getUsername(), desk.imlist.get(i).getPassword(), desk.imlist.get(i).getDesignation()};
+            Object[] objs = {desk.desklist.get(i).getDeskID(), desk.desklist.get(i).getName(), desk.desklist.get(i).getEmail(), desk.desklist.get(i).getContactNumber(),  desk.desklist.get(i).getCNIC(), desk.desklist.get(i).getAge(), desk.desklist.get(i).getGender(), desk.desklist.get(i).getMartialStatus(), desk.desklist.get(i).getSalary(), desk.desklist.get(i).getDateofJoining(),desk.desklist.get(i).getBloodgroup(), desk.desklist.get(i).getAddress(), desk.desklist.get(i).getUsername(), desk.desklist.get(i).getPassword()};
             dtm.addRow(objs);
             }
         

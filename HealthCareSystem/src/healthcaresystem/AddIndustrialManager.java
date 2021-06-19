@@ -1266,6 +1266,7 @@ private void clearField()
             if(desk.imlist.get(i).getIMID().equalsIgnoreCase(input))
             {
               JOptionPane.showMessageDialog(this,"Found "); 
+              id.setText(desk.imlist.get(i).getIMID());
               name1.setText(desk.imlist.get(i).getName());
               pho.setText(desk.imlist.get(i).getContactNumber());
               email.setText(desk.imlist.get(i).getEmail());
@@ -1282,7 +1283,7 @@ private void clearField()
                
               
             }
-            return;
+           
             }
     }//GEN-LAST:event_jLabel26MouseClicked
 
@@ -1292,6 +1293,14 @@ private void clearField()
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
+        dtm.setRowCount(0);
+            for(int i=0; i<desk.imlist.size(); i++)
+            {
+                
+            Object[] objs = {desk.imlist.get(i).getIMID(), desk.imlist.get(i).getName(), desk.imlist.get(i).getEmail(), desk.imlist.get(i).getContactNumber(),  desk.imlist.get(i).getCNIC(), desk.imlist.get(i).getAge(), desk.imlist.get(i).getGender(), desk.imlist.get(i).getMartialStatus(), desk.imlist.get(i).getSalary(), desk.imlist.get(i).getDateofJoining(),desk.imlist.get(i).getBloodgroup(), desk.imlist.get(i).getAddress(), desk.imlist.get(i).getUsername(), desk.imlist.get(i).getPassword(), desk.imlist.get(i).getDesignation()};
+            dtm.addRow(objs);
+            }
+        
     }//GEN-LAST:event_jLabel28MouseClicked
 
     private void jLabel29MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel29MouseClicked
@@ -1619,7 +1628,7 @@ private void clearField()
 
     private void usernameKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_usernameKeyTyped
         // TODO add your handling code here:
-         icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
+    icon = new ImageIcon(getClass().getResource("icons8_error_20px_2.png"));
     icon2 = new ImageIcon(getClass().getResource("icons8_double_tick_20px.png"));
     String Username= username.getText();
     int count=0;
