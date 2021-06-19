@@ -5,8 +5,16 @@
  */
 package healthcaresystem;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,13 +23,21 @@ import java.util.List;
 
 public class HealthCareSystem {
     static HealthCareSystem instance;
-    static HealthCareSystem a= new HealthCareSystem();
+    //static HealthCareSystem a= new HealthCareSystem();
     
-    public List<DeskPersonal>desklist= new ArrayList<>();
-    public List<IndManager>imlist= new ArrayList<>();
-    public List<IndWorker>iwlist= new ArrayList<>();
-    public List<Doctor>dlist= new ArrayList<>();
-    public List<Pharmacist>plist= new ArrayList<>();
+    public List<DeskPersonal>desklist;
+    public List<IndManager>imlist;
+    public List<IndWorker>iwlist ;
+    public List<Doctor>dlist;
+    public List<Pharmacist>plist;
+    
+    HealthCareSystem(){
+         desklist= new ArrayList<>();
+         imlist= new ArrayList<>();
+         iwlist= new ArrayList<>();
+         dlist= new ArrayList<>();
+         plist= new ArrayList<>();
+     }
     
     public static HealthCareSystem getInstance(){
         if(instance==null)
@@ -32,15 +48,17 @@ public class HealthCareSystem {
         return instance;
     }
      
-     private HealthCareSystem(){
-         
-     }
+     
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
+      HealthCareSystem h= HealthCareSystem.getInstance();
+        h.loadDeskPerson();
+        h.loadDoctor();
+        h.loadPharmacist();
         EKnowMain a= new EKnowMain();
         a.setVisible(true);
         
@@ -64,6 +82,75 @@ public class HealthCareSystem {
        desklist.set(a,b);
        
    }
+   
+   public boolean saveDeskPerson() 
+    {
+        try (FileWriter fw = new FileWriter("DeskPersons.txt",false);){
+            
+            for(int i = 0 ; i< desklist.size() ; i++ )
+          {
+            fw.write(desklist.get(i).getDeskID()+","+desklist.get(i).getName()+","+desklist.get(i).getContactNumber()+","+ desklist.get(i).getEmail()+","+ desklist.get(i).getCNIC()+","+ desklist.get(i).getAge() +","+ desklist.get(i).getGender()+","+ desklist.get(i).getMartialStatus()+
+                            ","+ desklist.get(i).getSalary()+","+ desklist.get(i).getDateofJoining()+","+ desklist.get(i).getBloodgroup()+","+ desklist.get(i).getAddress()+","+desklist.get(i).getUsername()+","+ desklist.get(i).getPassword()+"\n"  ) ; 
+          }
+         fw.flush();
+         fw.close();
+         return true;
+          
+        } catch (Exception e) {
+            return false;
+        }
+ 
+    }
+   
+    public void loadDeskPerson() 
+    {
+        
+        try {
+            
+            FileReader fr = null;
+            try {
+                fr = new FileReader("DeskPersons.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BufferedReader br = new BufferedReader(fr);
+            
+            String read = br.readLine();
+            while(read!=null){
+                String []array=read.split(",");
+                
+                DeskPersonal s = new DeskPersonal();
+                s.setDeskID(array[0]);
+                s.setName(array[1]);
+                s.setContactNumber(array[2]);
+                s.setEmail(array[3]);
+                s.setCNIC(array[4]);
+                s.setAge(array[5]);
+                s.setGender(array[6]);
+                s.setMartialStatus(array[7]);
+                s.setSalary(array[8]);
+                s.setDateofJoining(array[9]);
+                s.setBloodgroup(array[10]);
+                s.setAddress(array[11]);
+                s.setUsername(array[12]);
+                s.setPassword(array[13]);
+                
+                
+               this.desklist.add(s);
+               
+                
+                read =br.readLine();
+                
+            }
+            fr.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+            
+        }
    
    public void addIM( IndManager a)
     {
@@ -112,7 +199,78 @@ public class HealthCareSystem {
        dlist.set(a,b);
        
    }
+   
+   public boolean saveDoctor() 
+    {
+        try (FileWriter fw = new FileWriter("Doctors.txt",false);){
+            
+            for(int i = 0 ; i< dlist.size() ; i++ )
+          {
+            fw.write(dlist.get(i).getDID()+","+dlist.get(i).getName()+","+dlist.get(i).getContactNumber()+","+ dlist.get(i).getEmail()+","+ dlist.get(i).getCNIC()+","+ dlist.get(i).getAge() +","+ dlist.get(i).getGender()+","+ dlist.get(i).getMartialStatus()+
+                            ","+ dlist.get(i).getSalary()+","+ dlist.get(i).getDateofJoining()+","+ dlist.get(i).getBloodgroup()+","+ dlist.get(i).getAddress()+","+dlist.get(i).getUsername()+","+ dlist.get(i).getPassword()+","+ dlist.get(i).getDepartment()+","+dlist.get(i).getSpecialization()+"\n" ) ;
+          }
+         fw.flush();
+         fw.close();
+         return true;
+          
+        } catch (Exception e) {
+            return false;
+        }
+ 
+    }
     
+   public void loadDoctor() 
+    {
+        
+        try {
+            
+            FileReader fr = null;
+            try {
+                fr = new FileReader("Doctors.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BufferedReader br = new BufferedReader(fr);
+            
+            String read = br.readLine();
+            while(read!=null){
+                String []array=read.split(",");
+                
+                Doctor s = new Doctor();
+                s.setDID(array[0]);
+                s.setName(array[1]);
+                s.setContactNumber(array[2]);
+                s.setEmail(array[3]);
+                s.setCNIC(array[4]);
+                s.setAge(array[5]);
+                s.setGender(array[6]);
+                s.setMartialStatus(array[7]);
+                s.setSalary(array[8]);
+                s.setDateofJoining(array[9]);
+                s.setBloodgroup(array[10]);
+                s.setAddress(array[11]);
+                s.setUsername(array[12]);
+                s.setPassword(array[13]);
+                s.setDepartment(array[14]);
+                s.setSpecialization(array[15]);
+                
+               this.dlist.add(s);
+               
+                
+                read =br.readLine();
+                
+            }
+            fr.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+            
+        }
+   
+   
    public void addP( Pharmacist a)
     {
         plist.add(a);
@@ -128,4 +286,75 @@ public class HealthCareSystem {
        plist.set(a,b);
        
    }
+   
+  public boolean savePharmacist() 
+    {
+        try (FileWriter fw = new FileWriter("Pharmacists.txt",false);){
+            
+            for(int i = 0 ; i< plist.size() ; i++ )
+          {
+            fw.write(plist.get(i).getPID()+","+plist.get(i).getName()+","+plist.get(i).getContactNumber()+","+ plist.get(i).getEmail()+","+ plist.get(i).getCNIC()+","+ plist.get(i).getAge() +","+ plist.get(i).getGender()+","+ plist.get(i).getMartialStatus()+
+                            ","+ plist.get(i).getSalary()+","+ plist.get(i).getDateofJoining()+","+ plist.get(i).getBloodgroup()+","+ plist.get(i).getAddress()+","+plist.get(i).getUsername()+","+ plist.get(i).getPassword()+","+ plist.get(i).getDepartment()+","+plist.get(i).getCategory()+"\n" ) ;
+          }
+         fw.flush();
+         fw.close();
+         return true;
+          
+        } catch (Exception e) {
+            return false;
+        }
+ 
+    }
+  
+  public void loadPharmacist() 
+    {
+        
+        try {
+            
+            FileReader fr = null;
+            try {
+                fr = new FileReader("Pharmacists.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BufferedReader br = new BufferedReader(fr);
+            
+            String read = br.readLine();
+            while(read!=null){
+                String []array=read.split(",");
+                
+                Pharmacist s = new Pharmacist();
+                s.setPID(array[0]);
+                s.setName(array[1]);
+                s.setContactNumber(array[2]);
+                s.setEmail(array[3]);
+                s.setCNIC(array[4]);
+                s.setAge(array[5]);
+                s.setGender(array[6]);
+                s.setMartialStatus(array[7]);
+                s.setSalary(array[8]);
+                s.setDateofJoining(array[9]);
+                s.setBloodgroup(array[10]);
+                s.setAddress(array[11]);
+                s.setUsername(array[12]);
+                s.setPassword(array[13]);
+                s.setCategory(array[14]);
+                s.setSpecialization(array[15]);
+                
+               this.plist.add(s);
+               
+                
+                read =br.readLine();
+                
+            }
+            fr.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+            
+        }
+  
 }

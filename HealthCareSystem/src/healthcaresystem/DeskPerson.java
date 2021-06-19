@@ -1122,6 +1122,7 @@ public class DeskPerson extends javax.swing.JFrame {
             biodata.setBloodgroup(BloodGroup);
             biodata.setAddress(Address);
             desk.addList(biodata);
+            desk.saveDeskPerson();
             JOptionPane.showMessageDialog(null, "Desk Person Added!");
             clearField();
         }
@@ -1289,11 +1290,22 @@ public class DeskPerson extends javax.swing.JFrame {
 
     private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
         // TODO add your handling code here:
+        Boolean flag =false;
+        flag=desk.saveDeskPerson();
+        if(flag==true)
+        {
+            JOptionPane.showMessageDialog(null, "The Desk Persons data has been saved to file");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "The Desk Persons data has not been saved");
+        }
     }//GEN-LAST:event_jLabel27MouseClicked
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked
         // TODO add your handling code here:
+        
         dtm.setRowCount(0);
+        
             for(int i=0; i<desk.desklist.size(); i++)
             {
                 

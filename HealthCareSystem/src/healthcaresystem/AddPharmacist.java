@@ -1164,6 +1164,7 @@ public class AddPharmacist extends javax.swing.JFrame {
             biodata.setDepartment(Designation);
             biodata.setCategory(Category);
             desk.addP(biodata);
+            desk.savePharmacist();
             JOptionPane.showMessageDialog(null, "Pharmacist Added!");
             clearField();
         }
@@ -1320,6 +1321,15 @@ private void clearField()
 
     private void jLabel27MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel27MouseClicked
         // TODO add your handling code here:
+        Boolean flag =false;
+        flag=desk.savePharmacist();
+        if(flag==true)
+        {
+            JOptionPane.showMessageDialog(null, "The Pharmacists data has been saved to file");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "The Pharmacists data has not been saved");
+        }
     }//GEN-LAST:event_jLabel27MouseClicked
 
     private void jLabel28MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel28MouseClicked

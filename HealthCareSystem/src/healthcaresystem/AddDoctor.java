@@ -1183,6 +1183,7 @@ public class AddDoctor extends javax.swing.JFrame {
             biodata.setDepartment(Designation);
             biodata.setSpecialization(Specialization);
             desk.addD(biodata);
+            desk.saveDoctor();
             JOptionPane.showMessageDialog(null, "Doctor Added!");
             clearField();
         }
@@ -1340,6 +1341,16 @@ private void clearField()
 
     private void jLabel30MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel30MouseClicked
         // TODO add your handling code here:
+        boolean flag = false;
+        flag=desk.saveDoctor();
+        if(flag==true)
+        {
+            JOptionPane.showMessageDialog(null, "The Doctors data has been saved to file");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "The Doctors data has not been saved");
+        }
+        
     }//GEN-LAST:event_jLabel30MouseClicked
 
     private void jLabel34MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel34MouseClicked
