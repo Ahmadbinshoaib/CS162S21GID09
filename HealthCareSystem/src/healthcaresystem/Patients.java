@@ -10,6 +10,7 @@ package healthcaresystem;
  * @author Maria
  */
 public class Patients extends Person{
+    
     private String PatientID;
     private String Name;
     private String ContactNumber;
@@ -25,6 +26,39 @@ public class Patients extends Person{
     private String DoctorName;
     private String Deparment;
     private String DateTime;
+    private String RoomNo;
+    private String AppointmentDate;
+
+    /**
+     * @return the AppointmentDate
+     */
+    public String getAppointmentDate() {
+        return AppointmentDate;
+    }
+
+    /**
+     * @param AppointmentDate the AppointmentDate to set
+     */
+    public void setAppointmentDate(String AppointmentDate) {
+        this.AppointmentDate = AppointmentDate;
+    }
+
+    
+    
+    /**
+     * @return the RoomNo
+     */
+    public String getRoomNo() {
+        return RoomNo;
+    }
+
+    /**
+     * @param RoomNo the RoomNo to set
+     */
+    public void setRoomNo(String RoomNo) {
+        this.RoomNo = RoomNo;
+    }
+    
     
     
     

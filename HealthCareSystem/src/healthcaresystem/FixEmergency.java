@@ -6,7 +6,10 @@
 package healthcaresystem;
 
 import static healthcaresystem.DeskPerson.icon;
+import static healthcaresystem.FixSession.getDateTime;
 import static healthcaresystem.HRMOdule.icon;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
@@ -20,6 +23,14 @@ public class FixEmergency extends javax.swing.JFrame {
     String header3[] = new String[] {"ID", "Name", "Email", "Phone Number", "Gender", "Date", "Blood Group", "Username", "Department", "Specialization"};
     DefaultTableModel dtm3;
     int row3,col3;
+    
+     static String  getDateTime() {
+ 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now();  
+        return dtf.format(now);  
+   
+   }
 
     /**
      * Creates new form FixEmergency
@@ -90,6 +101,7 @@ public class FixEmergency extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
 
         jPanel2.setBackground(new java.awt.Color(64, 25, 82));
         jPanel2.setForeground(new java.awt.Color(20, 1, 31));
@@ -680,6 +692,7 @@ public class FixEmergency extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
@@ -743,8 +756,12 @@ public class FixEmergency extends javax.swing.JFrame {
         // TODO add your handling code here:
 
         dispose();
-        fixpatient a= new fixpatient();
+        fixepatient a= new fixepatient();
         a.setVisible(true);
+        
+        String doc= name3.getText();
+        a.nam1.setText(doc);
+        a.date1.setText(getDateTime());
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered

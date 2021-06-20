@@ -250,6 +250,9 @@ public class CounterModuke extends javax.swing.JFrame {
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_view_60px_1.png"))); // NOI18N
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel8MouseEntered(evt);
             }
@@ -261,7 +264,7 @@ public class CounterModuke extends javax.swing.JFrame {
         desk4.setBackground(new java.awt.Color(50, 50, 51));
         desk4.setFont(new java.awt.Font("Tahoma", 0, 20)); // NOI18N
         desk4.setForeground(new java.awt.Color(50, 50, 51));
-        desk4.setText("HISTORY");
+        desk4.setText("DETAILS");
         desk4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 desk4MouseEntered(evt);
@@ -524,7 +527,7 @@ public class CounterModuke extends javax.swing.JFrame {
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
         // TODO add your handling code here:
-        FixSession fs = new FixSession();
+        FixAppointment fs = new FixAppointment();
         fs.setVisible(true);
     }//GEN-LAST:event_jLabel7MouseClicked
 
@@ -538,6 +541,12 @@ public class CounterModuke extends javax.swing.JFrame {
         // TODO add your handling code here:
         dispose();
     }//GEN-LAST:event_desk8MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        PatientDetails a= new PatientDetails();
+        a.setVisible(true);
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments

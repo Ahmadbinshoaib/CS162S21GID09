@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
  * @author Maria
  */
 public class fixpatient extends javax.swing.JFrame {
+    HealthCareSystem desk= HealthCareSystem.getInstance();
 
     /**
      * Creates new form fixpatient
@@ -470,6 +471,11 @@ public class fixpatient extends javax.swing.JFrame {
                 FeesActionPerformed(evt);
             }
         });
+        Fees.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                FeesKeyTyped(evt);
+            }
+        });
 
         jLabel40.setBackground(new java.awt.Color(255, 255, 255));
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -496,6 +502,11 @@ public class fixpatient extends javax.swing.JFrame {
                 DisActionPerformed(evt);
             }
         });
+        Dis.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                DisKeyTyped(evt);
+            }
+        });
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_get_cash_27px_1.png"))); // NOI18N
 
@@ -509,6 +520,11 @@ public class fixpatient extends javax.swing.JFrame {
                 payActionPerformed(evt);
             }
         });
+        pay.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                payKeyTyped(evt);
+            }
+        });
 
         jLabel20.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_paper_money_27px.png"))); // NOI18N
 
@@ -520,6 +536,11 @@ public class fixpatient extends javax.swing.JFrame {
         arr.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 arrActionPerformed(evt);
+            }
+        });
+        arr.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                arrKeyTyped(evt);
             }
         });
 
@@ -1163,7 +1184,7 @@ public class fixpatient extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
-        HealthCareSystem desk = new HealthCareSystem();
+        
         Patients biodata = new Patients();
         String PID= id.getText();
         String Name= name1.getText();
@@ -1215,12 +1236,13 @@ public class fixpatient extends javax.swing.JFrame {
             desk.addPatient(biodata);
             
             JOptionPane.showMessageDialog(null, "Patient Registered!");
+            dispose();
             
             //clearField();
         }
         else
         {
-            JOptionPane.showMessageDialog(null,"Doctor Not Added!"+"\n"+"Reconsider the inputs");
+            JOptionPane.showMessageDialog(null,"Patient Not Added!"+"\n"+"Reconsider the inputs");
         }
     }//GEN-LAST:event_jLabel1MouseClicked
 
@@ -1486,6 +1508,66 @@ public class fixpatient extends javax.swing.JFrame {
         ad.setIcon(icon2);
     }
     }//GEN-LAST:event_addressKeyTyped
+
+    private void FeesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FeesKeyTyped
+        // TODO add your handling code here:
+        char c= evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            Fees.setEditable(false);
+            //a.setIcon(icon);
+        }
+        else
+        {
+           Fees.setEditable(true); 
+           //a.setIcon(icon2);
+        }
+    }//GEN-LAST:event_FeesKeyTyped
+
+    private void DisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_DisKeyTyped
+        // TODO add your handling code here:
+        char c= evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            Dis.setEditable(false);
+            //a.setIcon(icon);
+        }
+        else
+        {
+           Dis.setEditable(true); 
+           //a.setIcon(icon2);
+        }
+    }//GEN-LAST:event_DisKeyTyped
+
+    private void payKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_payKeyTyped
+        // TODO add your handling code here:
+        char c= evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            pay.setEditable(false);
+            //a.setIcon(icon);
+        }
+        else
+        {
+            pay.setEditable(true); 
+            //a.setIcon(icon2);
+        }
+    }//GEN-LAST:event_payKeyTyped
+
+    private void arrKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_arrKeyTyped
+        // TODO add your handling code here:
+        char c= evt.getKeyChar();
+        if(Character.isLetter(c))
+        {
+            arr.setEditable(false);
+            //a.setIcon(icon);
+        }
+        else
+        {
+           arr.setEditable(true); 
+           //a.setIcon(icon2);
+        }
+    }//GEN-LAST:event_arrKeyTyped
 
     /**
      * @param args the command line arguments

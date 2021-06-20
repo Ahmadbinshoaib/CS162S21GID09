@@ -31,6 +31,7 @@ public class HealthCareSystem {
     public List<Doctor>dlist;
     public List<Pharmacist>plist;
     public List<Patients>Patientlist;
+    public List<Patients>EPatientlist;
     
     HealthCareSystem(){
          desklist= new ArrayList<>();
@@ -505,5 +506,12 @@ public class HealthCareSystem {
     {
         Patientlist.add(a);
     }
+  
+  public void addEmergencyPatient( Patients a)
+    {
+        EPatientlist.add(a);
+    }
+  
+
   
 }
