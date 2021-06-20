@@ -30,6 +30,7 @@ public class HealthCareSystem {
     public List<IndWorker>iwlist ;
     public List<Doctor>dlist;
     public List<Pharmacist>plist;
+    public List<Patients>Patientlist;
     
     HealthCareSystem(){
          desklist= new ArrayList<>();
@@ -37,6 +38,7 @@ public class HealthCareSystem {
          iwlist= new ArrayList<>();
          dlist= new ArrayList<>();
          plist= new ArrayList<>();
+         Patientlist= new ArrayList<>();
      }
     
     public static HealthCareSystem getInstance(){
@@ -497,5 +499,11 @@ public class HealthCareSystem {
                 
             
         }
+  
+  
+  public void addPatient( Patients a)
+    {
+        Patientlist.add(a);
+    }
   
 }

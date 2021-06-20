@@ -6,6 +6,8 @@
 package healthcaresystem;
 
 import static healthcaresystem.HRMOdule.icon;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
 
@@ -14,6 +16,15 @@ import javax.swing.table.DefaultTableModel;
  * @author hp
  */
 public class FixSession extends javax.swing.JFrame {
+    
+    static String  getDateTime() {
+ 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now();  
+        return dtf.format(now);  
+   
+   }
+    
     HealthCareSystem desk= HealthCareSystem.getInstance();
     
     String header3[] = new String[] {"ID", "Name", "Email", "Phone Number", "Gender", "Date", "Blood Group", "Username", "Department", "Specialization"};
@@ -797,10 +808,13 @@ public class FixSession extends javax.swing.JFrame {
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
         // TODO add your handling code here:
-        
+        fixpatient f = new fixpatient();
+        String n = name3.getText();
+        f.nam.setText(n);
+        f.date.setText(getDateTime());
         dispose();
-        fixpatient a= new fixpatient();
-        a.setVisible(true);
+        //fixpatient a= new fixpatient();
+        f.setVisible(true);
     }//GEN-LAST:event_jLabel9MouseClicked
 
     private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
