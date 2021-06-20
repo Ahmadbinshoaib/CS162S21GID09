@@ -1463,7 +1463,6 @@ public class Report extends javax.swing.JFrame {
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField29, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(blood1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
                 .addGap(4, 4, 4)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2970,6 +2969,11 @@ public class Report extends javax.swing.JFrame {
 
         docid.setText("Enter Doctor ID");
         docid.setOpaque(false);
+        docid.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                docidMouseClicked(evt);
+            }
+        });
 
         jLabel55.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -3882,7 +3886,7 @@ public class Report extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1129, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4944,6 +4948,10 @@ public class Report extends javax.swing.JFrame {
     private void jTextField87ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField87ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField87ActionPerformed
+
+    private void docidMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_docidMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_docidMouseClicked
 public PageFormat getPageFormat(PrinterJob pj)
 {
     

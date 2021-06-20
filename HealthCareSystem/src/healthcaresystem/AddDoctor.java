@@ -566,7 +566,7 @@ public class AddDoctor extends javax.swing.JFrame {
 
         jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_intelligence_35px_1.png"))); // NOI18N
 
-        spe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Specialization" }));
+        spe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Specialization", "Pediatrics", "Child", "Dermatology", "Ophthalmology", "Neurology", "Oncology", "Endocrinology", "Gynaecology", "Heart", "Lungs" }));
         spe.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 speMousePressed(evt);
@@ -577,7 +577,7 @@ public class AddDoctor extends javax.swing.JFrame {
 
         jLabel39.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthcaresystem/icons8_department_35px.png"))); // NOI18N
 
-        depart.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Department" }));
+        depart.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPD", "EMERGENCY" }));
         depart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 departMousePressed(evt);
@@ -1185,6 +1185,7 @@ public class AddDoctor extends javax.swing.JFrame {
             desk.addD(biodata);
             desk.saveDoctor();
             JOptionPane.showMessageDialog(null, "Doctor Added!");
+            flag=desk.saveDoctor();
             clearField();
         }
         else
