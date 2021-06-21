@@ -515,12 +515,77 @@ public class HealthCareSystem {
     {
         Patientlist.add(a);
     }
-  
-  public void addEmergencyPatient( Patients a)
+    
+  public boolean savePatients() 
     {
-        EPatientlist.add(a);
+        try (FileWriter fw = new FileWriter("Patients.txt",false);){
+            
+            for(int i = 0 ; i< Patientlist.size() ; i++ )
+          {
+            fw.write(Patientlist.get(i).getPatientID()+"/"+Patientlist.get(i).getName()+"/"+Patientlist.get(i).getContactNumber()+"/"+ Patientlist.get(i).getEmail()+"/"+ Patientlist.get(i).getCNIC()+"/"+ Patientlist.get(i).getAge() +"/"+ Patientlist.get(i).getGender()+"/"+ Patientlist.get(i).getMartialStatus()+
+                            "/"+ Patientlist.get(i).getTokenNumber()+"/"+ Patientlist.get(i).getDateTime()+"/"+ Patientlist.get(i).getBloodgroup()+"/"+ Patientlist.get(i).getAddress()+"/"+Patientlist.get(i).getDoctorName()+"/"+ Patientlist.get(i).getDisease()+"/"+ Patientlist.get(i).getDeparment()+"/"+Patientlist.get(i).getRoomNo()+"/"+Patientlist.get(i).getAppointmentDate()+"\n" ) ;
+          }
+         fw.flush();
+         fw.close();
+         return true;
+          
+        } catch (Exception e) {
+            return false;
+        }
+ 
     }
   
+    public void loadPatients() 
+    {
+        
+        try {
+            
+            FileReader fr = null;
+            try {
+                fr = new FileReader("Patients.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BufferedReader br = new BufferedReader(fr);
+            
+            String read = br.readLine();
+            while(read!=null){
+                String []array=read.split("/");
+                
+                Patients s = new Patients();
+                s.setPatientID(array[0]);
+                s.setName(array[1]);
+                s.setContactNumber(array[2]);
+                s.setEmail(array[3]);
+                s.setCNIC(array[4]);
+                s.setAge(array[5]);
+                s.setGender(array[6]);
+                s.setMartialStatus(array[7]);
+                s.setTokenNumber(array[8]);
+                s.setDateTime(array[9]);
+                s.setBloodgroup(array[10]);
+                s.setAddress(array[11]);
+                s.setDoctorName(array[12]);
+                s.setDisease(array[13]);
+                s.setDeparment(array[14]);
+                s.setRoomNo(array[15]);
+                s.setAppointmentDate(array[16]);
+                
+               this.Patientlist.add(s);
+               
+                
+                read =br.readLine();
+                
+            }
+            fr.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
+            
+        }
 
   
 }

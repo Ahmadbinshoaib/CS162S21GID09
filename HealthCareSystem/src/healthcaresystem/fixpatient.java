@@ -1234,6 +1234,7 @@ public class fixpatient extends javax.swing.JFrame {
             biodata.setDeparment(department);
             biodata.setDoctorName(Doctor);
             desk.addPatient(biodata);
+            desk.savePatients();
             
             JOptionPane.showMessageDialog(null, "Patient Registered!");
             dispose();

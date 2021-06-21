@@ -1177,6 +1177,7 @@ public class fixepatient extends javax.swing.JFrame {
             biodata.setDoctorName(Doctor);
             biodata.setRoomNo(Room);
             desk.addPatient(biodata);
+            desk.savePatients();
 
             JOptionPane.showMessageDialog(null, "Patient Registered!");
             dispose();
