@@ -653,7 +653,6 @@ public class PatientDetails extends javax.swing.JFrame {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jTextField15, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(blood))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField17, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(department))
@@ -678,7 +677,12 @@ public class PatientDetails extends javax.swing.JFrame {
         jTextField18.setText("Department:");
         jTextField18.setBorder(null);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPD", "EMERGENCY" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "OPD", "EMERGENCY", "APPOINTMENT" }));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
 
         jLabel40.setBackground(new java.awt.Color(255, 255, 255));
         jLabel40.setFont(new java.awt.Font("Tahoma", 1, 9)); // NOI18N
@@ -845,11 +849,12 @@ public class PatientDetails extends javax.swing.JFrame {
         docname.setText(dtm3.getValueAt(row3, 11).toString());
         
         address.setText(dtm3.getValueAt(row3, 9).toString());
-        token.setText(dtm3.getValueAt(row3, 13).toString());
+       
 
         disease.setText(dtm3.getValueAt(row3, 10).toString());
         blood.setText(dtm3.getValueAt(row3, 8).toString());
         department.setText(dtm3.getValueAt(row3, 12).toString());
+        token.setText(dtm3.getValueAt(row3, 13).toString());
         
     }//GEN-LAST:event_jTable4MouseClicked
 
@@ -1021,6 +1026,10 @@ public class PatientDetails extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_jLabel40MouseClicked
+
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**
      * @param args the command line arguments

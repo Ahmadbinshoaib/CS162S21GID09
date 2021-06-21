@@ -8,6 +8,8 @@ package healthcaresystem;
 import com.toedter.calendar.JDayChooser;
 import static healthcaresystem.HRMOdule.icon;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -38,6 +40,14 @@ public class DeskPerson extends javax.swing.JFrame {
     String header[] = new String[] {"ID", "Name", "Email", "Phone Number", "CNIC","Age", "Gender", "Martial", "Salray", "Date", "Blood Group", "Address", "Username", "Password"};
     DefaultTableModel dtm;
     int row,col;
+    
+    static String  getDateTime() {
+ 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now();  
+        return dtf.format(now);  
+   
+   }
 
     /**
      * Creates new form DeskPerson
@@ -1087,6 +1097,7 @@ public class DeskPerson extends javax.swing.JFrame {
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
         // TODO add your handling code here:
+        String Date2= getDateTime();
         boolean flag= true;
         biodata= new DeskPersonal();
         String DPID= id.getText();
@@ -1138,6 +1149,37 @@ public class DeskPerson extends javax.swing.JFrame {
             Object[] objs = {desk.desklist.get(i).getDeskID(), desk.desklist.get(i).getName(), desk.desklist.get(i).getEmail(), desk.desklist.get(i).getContactNumber(),  desk.desklist.get(i).getCNIC(), desk.desklist.get(i).getAge(), desk.desklist.get(i).getGender(), desk.desklist.get(i).getMartialStatus(), desk.desklist.get(i).getSalary(), desk.desklist.get(i).getDateofJoining(),desk.desklist.get(i).getBloodgroup(), desk.desklist.get(i).getAddress(), desk.desklist.get(i).getUsername(), desk.desklist.get(i).getPassword()};
             dtm.addRow(objs);
             }
+            
+             Email e=new Email("eknowledgehealthcare@gmail.com","Pakistan1@",Email,"Welcoming Mr. "+ Name + " to E-Knowledge Health Care System ","Hi all,\n" +
+"\n" +
+"I am very pleased to announce that Mr." + Name + " will be joining us as a E-Knowledge Counter Board on " + Date2 + "\n" +
+"\n" + Name + 
+" will work with E-Knowledge Counter Module Team to facilitate the Patients to provide them the absolute data about specialist timing, specialization, accessibility and some more. \n "
+        + "To see if patient needs to fix an arrangement for later visit or he looks for an emergency"
+        + " or he may need a speedy examination through ODP. "
+        + "To get the charge of arrangement at that middle stop. To provide them certain Medical Test information with in that general area\n" +
+"\n" +
+"Please come to meet Ahmad Arshad on "+ Date2 + " after this Email at sharp 10: 30 PM. We welcome you to the team!\n" +
+"\n" +
+
+ "At the work environment, you will be given framework that will help you convey your obligations.\n"
+ + "To login to the framework, utilize the accompanying certifications. " + "\n\n" + 
+ "Username: " + Username + "\n" +  
+ "Password: " + Password + "\n\n\n" + 
+"Best regards,\n" +
+"\n" +
+"HR MANAGER\n" +
+"E-Knowledge Health Care System");
+        if(e.sendEmail())
+        {
+            JOptionPane.showMessageDialog(null, "Send Successfully","Seding Mail",3);
+                    
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Not Send","Seding Mail",1);
+        }
+           
+        
             
            
         

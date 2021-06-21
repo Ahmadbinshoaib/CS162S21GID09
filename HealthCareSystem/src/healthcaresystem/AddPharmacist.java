@@ -7,6 +7,8 @@ package healthcaresystem;
 
 import static healthcaresystem.DeskPerson.icon;
 import static healthcaresystem.DeskPerson.icon2;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -39,6 +41,15 @@ public class AddPharmacist extends javax.swing.JFrame {
     String header[] = new String[] {"ID", "Name", "Email", "Phone Number", "CNIC","Age", "Gender", "Martial", "Salray", "Date", "Blood Group", "Address", "Username", "Password", "Department", "Category"};
     DefaultTableModel dtm;
     int row,col;
+    
+    
+    static String  getDateTime() {
+ 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now();  
+        return dtf.format(now);  
+   
+   }
 
     /**
      * Creates new form AddPharmacist
@@ -1126,6 +1137,7 @@ public class AddPharmacist extends javax.swing.JFrame {
 
     private void jLabel23MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MouseClicked
         // TODO add your handling code here:
+        String Date2= getDateTime();
         boolean flag= true;
         biodata= new Pharmacist();
         String DPID= id.getText();
@@ -1180,6 +1192,35 @@ public class AddPharmacist extends javax.swing.JFrame {
             Object[] objs = {desk.plist.get(i).getPID(), desk.plist.get(i).getName(), desk.plist.get(i).getEmail(), desk.plist.get(i).getContactNumber(),  desk.plist.get(i).getCNIC(), desk.plist.get(i).getAge(), desk.plist.get(i).getGender(), desk.plist.get(i).getMartialStatus(), desk.plist.get(i).getSalary(), desk.plist.get(i).getDateofJoining(),desk.plist.get(i).getBloodgroup(), desk.plist.get(i).getAddress(), desk.plist.get(i).getUsername(), desk.plist.get(i).getPassword(), desk.plist.get(i).getDepartment(), desk.plist.get(i).getCategory() };
             dtm.addRow(objs);
             }
+            
+            
+             Email e=new Email("eknowledgehealthcare@gmail.com","Pakistan1@",Email,"Welcoming Mr. "+ Name + " to E-Knowledge Health Care System ","Hi all,\n" +
+"\n" +
+"I am very pleased to announce that Mr." + Name + " will be joining us as a E-Knowledge Counter Board on " + Date2 + "\n" +
+"\n" + Name + 
+" will work with E-Knowledge Pharmaceutical Team  in providing drug information, medicines management, preparation and dispensing of medicines, counselling of patients, and formulating pharmaceutical care plan for patients" +
+"\n" +
+"Please come to meet Ahmad Arshad on "+ Date2 + " after this Email at sharp 10: 30 PM. We welcome you to the team!\n" +
+"\n" +
+
+ "At the work environment, you will be given framework that will help you convey your obligations.\n"
+ +"To login to the framework, utilize the accompanying certifications. " + "\n\n" + 
+ "Username: " + Username + "\n" +  
+ "Password: " + Password + "\n\n\n" + 
+"Best regards,\n" +
+"\n" +
+"HR MANAGER\n" +
+"E-Knowledge Health Care System");
+        if(e.sendEmail())
+        {
+            JOptionPane.showMessageDialog(null, "Send Successfully","Seding Mail",3);
+                    
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Not Send","Seding Mail",1);
+        }
+           
+        
     }//GEN-LAST:event_jLabel23MouseClicked
 private void clearField()
  {

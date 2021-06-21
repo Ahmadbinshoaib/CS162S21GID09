@@ -57,15 +57,7 @@ public class HealthCareSystem {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Email e=new Email("eknowledgehealthcare@gmail.com","Pakistan1@","ahmadjutt454979@gmail.com","Panga Deal","Chal beta ab pang apila ");
-        if(e.sendEmail())
-        {
-            JOptionPane.showMessageDialog(null, "Send Successfully","Seding Mail",3);
-                    
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Not Send","Seding Mail",1);
-        }
+        
         
       HealthCareSystem h= HealthCareSystem.getInstance();
         h.loadDeskPerson();
@@ -73,6 +65,7 @@ public class HealthCareSystem {
         h.loadPharmacist();
         h.loadIndustrialManager();
         h.loadWorker();
+        //h.loadPatients();
         EKnowMain a= new EKnowMain();
         a.setVisible(true);
         

@@ -7,6 +7,8 @@ package healthcaresystem;
 
 import static healthcaresystem.DeskPerson.icon;
 import static healthcaresystem.DeskPerson.icon2;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -1142,9 +1144,16 @@ public class AddDoctor extends javax.swing.JFrame {
     private void pasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_pasActionPerformed
-
+static String  getDateTime() {
+ 
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        LocalDateTime now = LocalDateTime.now();  
+        return dtf.format(now);  
+   
+   }
     private void jLabel26MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel26MouseClicked
         // TODO add your handling code here:
+        String Date2= getDateTime();
         boolean flag= true;
         biodata= new Doctor();
         String DPID= id.getText();
@@ -1186,6 +1195,41 @@ public class AddDoctor extends javax.swing.JFrame {
             desk.saveDoctor();
             JOptionPane.showMessageDialog(null, "Doctor Added!");
             flag=desk.saveDoctor();
+            
+            dtm.setRowCount(0);
+            for(int i=0; i<desk.dlist.size(); i++)
+            {
+                
+            Object[] objs = {desk.dlist.get(i).getDID(), desk.dlist.get(i).getName(), desk.dlist.get(i).getEmail(), desk.dlist.get(i).getContactNumber(),  desk.dlist.get(i).getCNIC(), desk.dlist.get(i).getAge(), desk.dlist.get(i).getGender(), desk.dlist.get(i).getMartialStatus(), desk.dlist.get(i).getSalary(), desk.dlist.get(i).getDateofJoining(),desk.dlist.get(i).getBloodgroup(), desk.dlist.get(i).getAddress(), desk.dlist.get(i).getUsername(), desk.dlist.get(i).getPassword(), desk.dlist.get(i).getDepartment(), desk.dlist.get(i).getSpecialization() };
+            dtm.addRow(objs);
+            }
+            
+            Email e=new Email("eknowledgehealthcare@gmail.com","Pakistan1@",Email,"Welcoming Dr. "+ Name + " to E-Knowledge Health Care System ","Hi all,\n" +
+"\n" +
+"I am very pleased to announce that Dr." + Name + " will be joining us as a E-Knowledge Doctor's Board on " + Date2 + "\n" +
+"\n" + Name + 
+" will work with E-Knowledge Doctoral Team to monitor and care for patients  clinic ,investigate, diagnose and treat the health conditions of patients, prescribe and review patients' medication..\n" +
+"\n" +
+"Please come to meet Ahmad Shoaib on "+ Date2 + " after this Email at sharp 10: 30 PM. We welcome you to the team!\n" +
+"\n" +
+ "Department: " + Designation + "\n" + 
+ "Specialization: " + Specialization + "\n\n" + 
+ "At the work environment, you will be given framework that will help you convey your obligations.\n"
+ + "To login to the framework, utilize the accompanying certifications. " + "\n\n" + 
+ "Username: " + Username + "\n" +  
+ "Password: " + Password + "\n\n\n" + 
+"Best regards,\n" +
+"\n" +
+"HR MANAGER\n" +
+"E-Knowledge Health Care System");
+        if(e.sendEmail())
+        {
+            JOptionPane.showMessageDialog(null, "Send Successfully","Seding Mail",3);
+                    
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Not Send","Seding Mail",1);
+        }
             clearField();
         }
         else
@@ -1193,13 +1237,8 @@ public class AddDoctor extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Doctor Not Added!"+"\n"+"Reconsider the inputs");
         }
         
-        dtm.setRowCount(0);
-            for(int i=0; i<desk.dlist.size(); i++)
-            {
-                
-            Object[] objs = {desk.dlist.get(i).getDID(), desk.dlist.get(i).getName(), desk.dlist.get(i).getEmail(), desk.dlist.get(i).getContactNumber(),  desk.dlist.get(i).getCNIC(), desk.dlist.get(i).getAge(), desk.dlist.get(i).getGender(), desk.dlist.get(i).getMartialStatus(), desk.dlist.get(i).getSalary(), desk.dlist.get(i).getDateofJoining(),desk.dlist.get(i).getBloodgroup(), desk.dlist.get(i).getAddress(), desk.dlist.get(i).getUsername(), desk.dlist.get(i).getPassword(), desk.dlist.get(i).getDepartment(), desk.dlist.get(i).getSpecialization() };
-            dtm.addRow(objs);
-            }
+        
+        
     }//GEN-LAST:event_jLabel26MouseClicked
 private void clearField()
  {
