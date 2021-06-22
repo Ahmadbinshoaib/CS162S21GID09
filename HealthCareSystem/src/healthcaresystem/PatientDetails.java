@@ -7,6 +7,7 @@ package healthcaresystem;
 
 import static healthcaresystem.DeskPerson.icon;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -901,6 +902,7 @@ public class PatientDetails extends javax.swing.JFrame {
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
         dtm3.setRowCount(0);
+        
         for(int i=0; i<desk.Patientlist.size(); i++)
         {
             

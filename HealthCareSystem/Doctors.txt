@@ -1,8 +1,8 @@
-DOC-123,Ahmad Arshad,03324844741,ahmad530363@gmail.com,3520218242997,19,Male,Single,120000,12-12-2020,O+,123 Main Street New York NY 10030,Ahmad34,1234,OPD,Specialization
-DOC-220,Haider Ali,03007845584,haider3@gmail.com,3520265462803,29,Male,Married,20000,12-12-2002,B+,123 Main Street New York NY 10030 h,haider123,jomloco,OPD,Child
-DOC-225,Talha Shoaib,03098021640,talaha786@gmail.com,3520265478904,32,Male,Married,200002,8-12-2002,O+,123 Main Street New York NY 10030 h okay,talha786,lahore,EMERGENCY,Neurology
-DOC-700,Nabeel Yousaf,03328700565,nabeel530363@gmail.com,3535202658796,32,Male,Married,25000,03-2-2001,B-,123 Main Street New York NY 10030 oksy,null,maker,EMERGENCY,Neurology
-DOC-900,Ahmad Shoaib,03007845584,ahmadshoaib1044@gmail.com,3520265462803,23,Male,Married,2000,12-12-2020,AB+,123 Main Street,null, NY 10030 ahha,ahmad123,Pakistan1@
-DOC-123,Minahil Shoaib,03344465896,minahilshoaib814@gmail.com,3520265462803,26,Female,Single,20000,12-2-2002,A-,13 Jamal park Shadara,null,minahil123,pakistan,OPD
-DOC-123,Ahmad Arshad,03007845584,ahmadjutt454979@gmail.com,3520265462803,23,Male,Single,20000,21-06-2020,B+,123 Main Street, New York, NY 10030 hah,ahmad454,Password,EMERGENCY,Neurology
-DOC-234,Ahmad,03007845584,ahmadshoaib1044@gmail.com,3520265462803,23,Male,Married,23000,12-2-2002,AB+,123 Main Street, New York, NY 10030 jsj,ahmad1044,op456777js,OPD,Ophthalmology
+DOC-123~Ahmad Arshad~03324844741~ahmad530363@gmail.com~3520218242997~19~Male~Single~120000~12-12-2020~O+~123 Main Street New York NY 10030~Ahmad34~1234~OPD~Specialization
+DOC-220~Haider Ali~03007845584~haider3@gmail.com~3520265462803~29~Male~Married~20000~12-12-2002~B+~123 Main Street New York NY 10030 h~haider123~jomloco~OPD~Child
+DOC-225~Talha Shoaib~03098021640~talaha786@gmail.com~3520265478904~32~Male~Married~200002~8-12-2002~O+~123 Main Street New York NY 10030 h okay~talha786~lahore~EMERGENCY~Neurology
+DOC-700~Nabeel Yousaf~03328700565~nabeel530363@gmail.com~3535202658796~32~Male~Married~25000~03-2-2001~B-~123 Main Street New York NY 10030 oksy~nabeel123~maker~EMERGENCY~Neurology
+DOC-900~Ahmad Shoaib~03007845584~ahmadshoaib1044@gmail.com~3520265462803~23~Male~Married~2000~12-12-2020~AB+~123 Main Street NY 10030~Ahmad456~ahha~OPD~Child
+DOC-123~Minahil Shoaib~03344465896~minahilshoaib814@gmail.com~3520265462803~26~Female~Single~20000~12-2-2002~A-~13 Jamal park Shadara~minahil123~pakistan~OPD~Gynaecology
+DOC-123~Ahmad Arshad~03007845584~ahmadjutt454979@gmail.com~3520265462803~23~Male~Single~20000~21-06-2020~B+~123 Main Street NY 10030 ~ahmad454~Password113~EMERGENCY~Heart
+DOC-234~Ahmad~03007845584~ahmadshoaib1044@gmail.com~3520265462803~23~Male~Married~23000~12-2-2002~AB+~123 Main Street NY 10030 ~ahmad1044~op456777js~OPD~Ophthalmology

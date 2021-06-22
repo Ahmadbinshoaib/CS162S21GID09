@@ -1,1 +1,1 @@
-EMP-001,Haider Ali,03458956643,haider@gmail.com,3567619349884,25,Male,Single,5600000,12-12-2020,O+,123 Main Street  New York NY 10030,haider999,haider@,Designation
+EMP-001~Haider Ali~03458956643~haider@gmail.com~3567619349884~25~Male~Single~5600000~12-12-2020~O+~123 Main Street  New York NY 10030~haider999~haider@~Designation

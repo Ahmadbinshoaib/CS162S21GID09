@@ -65,7 +65,7 @@ public class HealthCareSystem {
         h.loadPharmacist();
         h.loadIndustrialManager();
         h.loadWorker();
-        //h.loadPatients();
+        h.loadPatients();
         EKnowMain a= new EKnowMain();
         a.setVisible(true);
         
@@ -96,8 +96,8 @@ public class HealthCareSystem {
             
             for(int i = 0 ; i< desklist.size() ; i++ )
           {
-            fw.write(desklist.get(i).getDeskID()+","+desklist.get(i).getName()+","+desklist.get(i).getContactNumber()+","+ desklist.get(i).getEmail()+","+ desklist.get(i).getCNIC()+","+ desklist.get(i).getAge() +","+ desklist.get(i).getGender()+","+ desklist.get(i).getMartialStatus()+
-                            ","+ desklist.get(i).getSalary()+","+ desklist.get(i).getDateofJoining()+","+ desklist.get(i).getBloodgroup()+","+ desklist.get(i).getAddress()+","+desklist.get(i).getUsername()+","+ desklist.get(i).getPassword()+"\n"  ) ; 
+            fw.write(desklist.get(i).getDeskID()+"~"+desklist.get(i).getName()+"~"+desklist.get(i).getContactNumber()+"~"+ desklist.get(i).getEmail()+"~"+ desklist.get(i).getCNIC()+"~"+ desklist.get(i).getAge() +"~"+ desklist.get(i).getGender()+"~"+ desklist.get(i).getMartialStatus()+
+                            "~"+ desklist.get(i).getSalary()+"~"+ desklist.get(i).getDateofJoining()+"~"+ desklist.get(i).getBloodgroup()+"~"+ desklist.get(i).getAddress()+"~"+desklist.get(i).getUsername()+"~"+ desklist.get(i).getPassword()+"\n"  ) ; 
           }
          fw.flush();
          fw.close();
@@ -124,7 +124,7 @@ public class HealthCareSystem {
             
             String read = br.readLine();
             while(read!=null){
-                String []array=read.split(",");
+                String []array=read.split("~");
                 
                 DeskPersonal s = new DeskPersonal();
                 s.setDeskID(array[0]);
@@ -181,8 +181,8 @@ public class HealthCareSystem {
             
             for(int i = 0 ; i< imlist.size() ; i++ )
           {
-            fw.write(imlist.get(i).getIMID()+","+imlist.get(i).getName()+","+imlist.get(i).getContactNumber()+","+ imlist.get(i).getEmail()+","+ imlist.get(i).getCNIC()+","+ imlist.get(i).getAge() +","+ imlist.get(i).getGender()+","+ imlist.get(i).getMartialStatus()+
-                            ","+ imlist.get(i).getSalary()+","+ imlist.get(i).getDateofJoining()+","+ imlist.get(i).getBloodgroup()+","+ imlist.get(i).getAddress()+","+imlist.get(i).getUsername()+","+ imlist.get(i).getPassword()+","+imlist.get(i).getDesignation()+"\n"  ) ; 
+            fw.write(imlist.get(i).getIMID()+"~"+imlist.get(i).getName()+"~"+imlist.get(i).getContactNumber()+"~"+ imlist.get(i).getEmail()+"~"+ imlist.get(i).getCNIC()+"~"+ imlist.get(i).getAge() +"~"+ imlist.get(i).getGender()+"~"+ imlist.get(i).getMartialStatus()+
+                            "~"+ imlist.get(i).getSalary()+"~"+ imlist.get(i).getDateofJoining()+"~"+ imlist.get(i).getBloodgroup()+"~"+ imlist.get(i).getAddress()+"~"+imlist.get(i).getUsername()+"~"+ imlist.get(i).getPassword()+"~"+imlist.get(i).getDesignation()+"\n"  ) ; 
           }
          fw.flush();
          fw.close();
@@ -210,7 +210,7 @@ public class HealthCareSystem {
             
             String read = br.readLine();
             while(read!=null){
-                String []array=read.split(",");
+                String []array=read.split("~");
                 
                 IndManager s = new IndManager();
                 s.setIMID(array[0]);
@@ -267,8 +267,8 @@ public class HealthCareSystem {
             
             for(int i = 0 ; i< iwlist.size() ; i++ )
           {
-            fw.write(iwlist.get(i).getIWID()+","+iwlist.get(i).getName()+","+iwlist.get(i).getContactNumber()+","+ iwlist.get(i).getEmail()+","+ iwlist.get(i).getCNIC()+","+ iwlist.get(i).getAge() +","+ iwlist.get(i).getGender()+","+ iwlist.get(i).getMartialStatus()+
-                            ","+ iwlist.get(i).getSalary()+","+ iwlist.get(i).getDateofJoining()+","+ iwlist.get(i).getBloodgroup()+","+ iwlist.get(i).getAddress()+","+iwlist.get(i).getUsername()+","+ iwlist.get(i).getPassword()+","+iwlist.get(i).getLabour()+"\n"  ) ; 
+            fw.write(iwlist.get(i).getIWID()+"~"+iwlist.get(i).getName()+"~"+iwlist.get(i).getContactNumber()+"~"+ iwlist.get(i).getEmail()+"~"+ iwlist.get(i).getCNIC()+"~"+ iwlist.get(i).getAge() +"~"+ iwlist.get(i).getGender()+"~"+ iwlist.get(i).getMartialStatus()+
+                            "~"+ iwlist.get(i).getSalary()+"~"+ iwlist.get(i).getDateofJoining()+"~"+ iwlist.get(i).getBloodgroup()+"~"+ iwlist.get(i).getAddress()+"~"+iwlist.get(i).getUsername()+"~"+ iwlist.get(i).getPassword()+"~"+iwlist.get(i).getLabour()+"\n"  ) ; 
           }
          fw.flush();
          fw.close();
@@ -295,7 +295,7 @@ public class HealthCareSystem {
             
             String read = br.readLine();
             while(read!=null){
-                String []array=read.split(",");
+                String []array=read.split("~");
                 
                 IndWorker s = new IndWorker();
                 s.setIWID(array[0]);
@@ -352,8 +352,8 @@ public class HealthCareSystem {
             
             for(int i = 0 ; i< dlist.size() ; i++ )
           {
-            fw.write(dlist.get(i).getDID()+","+dlist.get(i).getName()+","+dlist.get(i).getContactNumber()+","+ dlist.get(i).getEmail()+","+ dlist.get(i).getCNIC()+","+ dlist.get(i).getAge() +","+ dlist.get(i).getGender()+","+ dlist.get(i).getMartialStatus()+
-                            ","+ dlist.get(i).getSalary()+","+ dlist.get(i).getDateofJoining()+","+ dlist.get(i).getBloodgroup()+","+ dlist.get(i).getAddress()+","+dlist.get(i).getUsername()+","+ dlist.get(i).getPassword()+","+ dlist.get(i).getDepartment()+","+dlist.get(i).getSpecialization()+"\n" ) ;
+            fw.write(dlist.get(i).getDID()+"~"+dlist.get(i).getName()+"~"+dlist.get(i).getContactNumber()+"~"+ dlist.get(i).getEmail()+"~"+ dlist.get(i).getCNIC()+"~"+ dlist.get(i).getAge() +"~"+ dlist.get(i).getGender()+"~"+ dlist.get(i).getMartialStatus()+
+                            "~"+ dlist.get(i).getSalary()+"~"+ dlist.get(i).getDateofJoining()+"~"+ dlist.get(i).getBloodgroup()+"~"+ dlist.get(i).getAddress()+"~"+dlist.get(i).getUsername()+"~"+ dlist.get(i).getPassword()+"~"+ dlist.get(i).getDepartment()+"~"+dlist.get(i).getSpecialization()+"\n" ) ;
           }
          fw.flush();
          fw.close();
@@ -380,7 +380,7 @@ public class HealthCareSystem {
             
             String read = br.readLine();
             while(read!=null){
-                String []array=read.split(",");
+                String []array=read.split("~");
                 
                 Doctor s = new Doctor();
                 s.setDID(array[0]);
@@ -439,8 +439,8 @@ public class HealthCareSystem {
             
             for(int i = 0 ; i< plist.size() ; i++ )
           {
-            fw.write(plist.get(i).getPID()+","+plist.get(i).getName()+","+plist.get(i).getContactNumber()+","+ plist.get(i).getEmail()+","+ plist.get(i).getCNIC()+","+ plist.get(i).getAge() +","+ plist.get(i).getGender()+","+ plist.get(i).getMartialStatus()+
-                            ","+ plist.get(i).getSalary()+","+ plist.get(i).getDateofJoining()+","+ plist.get(i).getBloodgroup()+","+ plist.get(i).getAddress()+","+plist.get(i).getUsername()+","+ plist.get(i).getPassword()+","+ plist.get(i).getDepartment()+","+plist.get(i).getCategory()+"\n" ) ;
+            fw.write(plist.get(i).getPID()+"~"+plist.get(i).getName()+"~"+plist.get(i).getContactNumber()+"~"+ plist.get(i).getEmail()+"~"+ plist.get(i).getCNIC()+"~"+ plist.get(i).getAge() +"~"+ plist.get(i).getGender()+"~"+ plist.get(i).getMartialStatus()+
+                            "~"+ plist.get(i).getSalary()+"~"+ plist.get(i).getDateofJoining()+"~"+ plist.get(i).getBloodgroup()+"~"+ plist.get(i).getAddress()+"~"+plist.get(i).getUsername()+"~"+ plist.get(i).getPassword()+"~"+ plist.get(i).getDepartment()+"~"+plist.get(i).getCategory()+"\n" ) ;
           }
          fw.flush();
          fw.close();
@@ -467,7 +467,7 @@ public class HealthCareSystem {
             
             String read = br.readLine();
             while(read!=null){
-                String []array=read.split(",");
+                String []array=read.split("~");
                 
                 Pharmacist s = new Pharmacist();
                 s.setPID(array[0]);
@@ -485,7 +485,7 @@ public class HealthCareSystem {
                 s.setUsername(array[12]);
                 s.setPassword(array[13]);
                 s.setCategory(array[14]);
-                s.setSpecialization(array[15]);
+                s.setDepartment(array[15]);
                 
                this.plist.add(s);
                
@@ -515,8 +515,8 @@ public class HealthCareSystem {
             
             for(int i = 0 ; i< Patientlist.size() ; i++ )
           {
-            fw.write(Patientlist.get(i).getPatientID()+"/"+Patientlist.get(i).getName()+"/"+Patientlist.get(i).getContactNumber()+"/"+ Patientlist.get(i).getEmail()+"/"+ Patientlist.get(i).getCNIC()+"/"+ Patientlist.get(i).getAge() +"/"+ Patientlist.get(i).getGender()+"/"+ Patientlist.get(i).getMartialStatus()+
-                            "/"+ Patientlist.get(i).getTokenNumber()+"/"+ Patientlist.get(i).getDateTime()+"/"+ Patientlist.get(i).getBloodgroup()+"/"+ Patientlist.get(i).getAddress()+"/"+Patientlist.get(i).getDoctorName()+"/"+ Patientlist.get(i).getDisease()+"/"+ Patientlist.get(i).getDeparment()+"/"+Patientlist.get(i).getRoomNo()+"/"+Patientlist.get(i).getAppointmentDate()+"\n" ) ;
+            fw.write(Patientlist.get(i).getPatientID()+"~"+Patientlist.get(i).getName()+"~"+Patientlist.get(i).getContactNumber()+"~"+ Patientlist.get(i).getEmail()+"~"+ Patientlist.get(i).getCNIC()+"~"+ Patientlist.get(i).getAge() +"~"+ Patientlist.get(i).getGender()+"~"+ Patientlist.get(i).getMartialStatus()+
+                            "~"+ Patientlist.get(i).getTokenNumber()+"~"+ Patientlist.get(i).getDateTime()+"~"+ Patientlist.get(i).getBloodgroup()+"~"+ Patientlist.get(i).getAddress()+"~"+Patientlist.get(i).getDoctorName()+"~"+ Patientlist.get(i).getDisease()+"~"+ Patientlist.get(i).getDeparment()+"~"+Patientlist.get(i).getRoomNo()+"~"+Patientlist.get(i).getAppointmentDate()+"\n" ) ;
           }
          fw.flush();
          fw.close();
@@ -543,8 +543,8 @@ public class HealthCareSystem {
             
             String read = br.readLine();
             while(read!=null){
-                String []array=read.split("/");
-                
+                String []array=read.split("~");
+             
                 Patients s = new Patients();
                 s.setPatientID(array[0]);
                 s.setName(array[1]);

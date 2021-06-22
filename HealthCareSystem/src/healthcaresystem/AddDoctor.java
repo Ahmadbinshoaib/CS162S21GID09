@@ -1797,7 +1797,7 @@ private void clearField()
     }//GEN-LAST:event_departMousePressed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
+// TODO add your handling code here:
         row= jTable1.getSelectedRow();
         col= jTable1.getColumnCount();
         //System.out.println(row+ " " + col);
