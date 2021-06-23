@@ -30,7 +30,7 @@ public class HealthCareSystem {
     public List<Doctor>dlist;
     public List<Pharmacist>plist;
     public List<Patients>Patientlist;
-    public List<Patients>EPatientlist;
+    public List<Patients>PrescibePatientlist;
     
     HealthCareSystem(){
          desklist= new ArrayList<>();
@@ -39,6 +39,7 @@ public class HealthCareSystem {
          dlist= new ArrayList<>();
          plist= new ArrayList<>();
          Patientlist= new ArrayList<>();
+         PrescibePatientlist= new ArrayList<>();
      }
     
     public static HealthCareSystem getInstance(){
@@ -576,9 +577,23 @@ public class HealthCareSystem {
         } catch (IOException ex) {
             Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
+        
                 
             
         }
+    
+    
+    public void addPrescribePatients( PrescribePatients a)
+    {
+        PrescibePatientlist.add(a);
+    }
+    
+    public void deletePatients(int a)
+    {
+        Patientlist.remove(a);
+    }
 
   
 }

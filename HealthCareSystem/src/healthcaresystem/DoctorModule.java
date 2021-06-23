@@ -6,6 +6,7 @@
 package healthcaresystem;
 
 import static healthcaresystem.EKnowMain.icon;
+import static healthcaresystem.ViewPatients.du;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 
@@ -14,6 +15,7 @@ import javax.swing.ImageIcon;
  * @author Maria
  */
 public class DoctorModule extends javax.swing.JFrame {
+HealthCareSystem desk= HealthCareSystem.getInstance();
 
     /**
      * Creates new form DoctorModule
@@ -44,6 +46,7 @@ public class DoctorModule extends javax.swing.JFrame {
         desk2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         desk8 = new javax.swing.JLabel();
+        du2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -210,6 +213,9 @@ public class DoctorModule extends javax.swing.JFrame {
             }
         });
 
+        du2.setForeground(new java.awt.Color(215, 217, 215));
+        du2.setText("jLabel5");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -221,9 +227,6 @@ public class DoctorModule extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(418, 418, 418))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(38, 38, 38)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,13 +236,21 @@ public class DoctorModule extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(desk8)
                         .addContainerGap())))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addComponent(du2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(418, 418, 418))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(du2))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(desk8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -358,13 +369,45 @@ public class DoctorModule extends javax.swing.JFrame {
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
         // TODO add your handling code here:
         ViewPatients a= new ViewPatients();
+        
         a.setVisible(true);
+        String docc=du2.getText();
+        a.du.setText(docc);
+        
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
         // TODO add your handling code here:
+        String docname=null;
+        String u= du2.getText();
         PatientHistory a= new PatientHistory();
+        
+        //a.user.setText(u);
         a.setVisible(true);
+        
+        
+        String input= du.getText();
+        for(int i=0; i<desk.dlist.size(); i++){
+              
+            if(desk.dlist.get(i).getUsername().equalsIgnoreCase(input))
+            {
+               
+               docname= desk.dlist.get(i).getName();
+               //JOptionPane.showMessageDialog(null, docdepartment);
+                
+            }
+        }
+        
+        for(int i=0; i<desk.PrescibePatientlist.size(); i++){
+
+            if(desk.PrescibePatientlist.get(i).getDoctorName().equalsIgnoreCase(docname))
+            {
+                //patients=desk.Patientlist.get(i).getPatientID();
+                a.patid.addItem(desk.PrescibePatientlist.get(i).getPatientID());
+               
+             }
+
+            }
     }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
@@ -408,6 +451,7 @@ public class DoctorModule extends javax.swing.JFrame {
     private javax.swing.JLabel desk5;
     private javax.swing.JLabel desk6;
     private javax.swing.JLabel desk8;
+    public static javax.swing.JLabel du2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
