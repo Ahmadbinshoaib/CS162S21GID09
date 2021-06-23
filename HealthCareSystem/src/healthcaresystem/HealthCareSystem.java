@@ -30,7 +30,7 @@ public class HealthCareSystem {
     public List<Doctor>dlist;
     public List<Pharmacist>plist;
     public List<Patients>Patientlist;
-    public List<Patients>PrescibePatientlist;
+    public List<PrescribePatients>PrescibePatientlist;
     
     HealthCareSystem(){
          desklist= new ArrayList<>();
@@ -67,6 +67,7 @@ public class HealthCareSystem {
         h.loadIndustrialManager();
         h.loadWorker();
         h.loadPatients();
+        h.loadPrescribedPatients();
         EKnowMain a= new EKnowMain();
         a.setVisible(true);
         
@@ -594,6 +595,82 @@ public class HealthCareSystem {
     {
         Patientlist.remove(a);
     }
-
+    
+    public boolean savePrescribePatients() 
+    {
+        try (FileWriter fw = new FileWriter("PrescribedPatients.txt",false);){
+            
+            for(int i = 0 ; i< Patientlist.size() ; i++ )
+          {
+            fw.write(PrescibePatientlist.get(i).getPatientID()+"~"+PrescibePatientlist.get(i).getName()+"~"+PrescibePatientlist.get(i).getContactNumber()+"~"+ PrescibePatientlist.get(i).getEmail()+"~"+ PrescibePatientlist.get(i).getCNIC()+"~"+ PrescibePatientlist.get(i).getAge() +"~"+ PrescibePatientlist.get(i).getGender()+"~"+ PrescibePatientlist.get(i).getMartialStatus()+ "~"+ PrescibePatientlist.get(i).getTokenNumber()+"~"+ PrescibePatientlist.get(i).getDateTime()+"~"+
+                    PrescibePatientlist.get(i).getBloodgroup()+"~"+ PrescibePatientlist.get(i).getAddress()+"~"+PrescibePatientlist.get(i).getDoctorName()+"~"+ PrescibePatientlist.get(i).getDisease()+"~"+ PrescibePatientlist.get(i).getDeparment()+"~"+PrescibePatientlist.get(i).getRoomNo()+"~"+PrescibePatientlist.get(i).getAppointmentDate()+"~"+PrescibePatientlist.get(i).getDescription()+"~"+PrescibePatientlist.get(i).getTests()+"~"+PrescibePatientlist.get(i).getPrescribedDisease()+"\n" ) ;
+          }
+         fw.flush();
+         fw.close();
+         return true;
+          
+        } catch (Exception e) {
+            return false;
+        }
+ 
+    }
+    
+    public void loadPrescribedPatients() 
+    {
+        
+        try {
+            
+            FileReader fr = null;
+            try {
+                fr = new FileReader("Patients.txt");
+            } catch (FileNotFoundException ex) {
+                Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            BufferedReader br = new BufferedReader(fr);
+            
+            String read = br.readLine();
+            while(read!=null){
+                String []array=read.split("~");
+             
+                PrescribePatients s = new PrescribePatients();
+                s.setPatientID(array[0]);
+                s.setName(array[1]);
+                s.setContactNumber(array[2]);
+                s.setEmail(array[3]);
+                s.setCNIC(array[4]);
+                s.setAge(array[5]);
+                s.setGender(array[6]);
+                s.setMartialStatus(array[7]);
+                s.setTokenNumber(array[8]);
+                s.setDateTime(array[9]);
+                s.setBloodgroup(array[10]);
+                s.setAddress(array[11]);
+                s.setDoctorName(array[12]);
+                s.setDisease(array[13]);
+                s.setDeparment(array[14]);
+                s.setRoomNo(array[15]);
+                s.setAppointmentDate(array[16]);
+                s.setDescription(array[17]);
+                s.setTests(array[18]);
+                s.setPrescribedDisease(array[19]);
+                
+               this.Patientlist.add(s);
+               
+                
+                read =br.readLine();
+                
+            }
+            fr.close();
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
+                
+            
+        }
   
 }

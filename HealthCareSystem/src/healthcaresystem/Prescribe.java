@@ -705,17 +705,27 @@ public class Prescribe extends javax.swing.JFrame {
             biodata.setDescription(Description);
             biodata.setPrescribedDisease(Dis);
             biodata.setTests(Tests);
-            biodata.setDoctorName(lpp.getText());
-            
-            desk.addPrescribePatients(biodata);
-            
             for (int i = 0; i < desk.Patientlist.size(); i++) {
                 if (PID.equals(desk.Patientlist.get(i).getPatientID())) {
-                    desk.deletePatients(i);
+                    //desk.deletePatients(i);
+                    biodata.setDoctorName( desk.Patientlist.get(i).getDoctorName());
+                    
                    
                 }
             }
             
+            
+            desk.addPrescribePatients(biodata);
+            desk.savePrescribePatients();
+            
+            for (int i = 0; i < desk.Patientlist.size(); i++) {
+                if (PID.equals(desk.Patientlist.get(i).getPatientID())) {
+                    desk.deletePatients(i);
+                    
+                   
+                }
+            }
+            desk.savePatients();
 
             JOptionPane.showMessageDialog(null, "Patient added in Record!");
             dispose();

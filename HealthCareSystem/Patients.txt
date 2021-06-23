@@ -1,5 +1,1 @@
-PAT-220~Fatymah Mujahid~03007845584~fatymah@gmail.com~3520265462803~23~Female~Married~Token no~2021/06/21 11:13:26~A-~123 Main Street, New York, NY 10030 Okay~Haider Ali~Hypatitus~OPD~null~null
 PAT-300~Sarah Cahudhary~03325200414~sarah.23@gmail.com~3520265478965~23~Female~Married~null~2021/06/21 11:18:12~O-~123 Main Street, New York, NY 10030 jjaj~Haider Ali~Kidney ~APPOINTMENT~null~24,July 12:30
-PAT-220~Alia Ali~03329800565~alia@gmail.com~3520265467890~23~Female~Married~Token no~2021/06/23 11:03:54~B-~123 Main Street, New York, NY 10030 jja~Ahmad Arshad~Heart~EMERGENCY~ROOM NO 203~null
-PAT-220~Asia BIBI~03007855566~asiab@gmail.com~3520265465896~56~Female~Married~Token no~2021/06/23 16:13:39~AB+~123 Main Street, New York, NY 10030 jj~Talha Shoaib~Dieerha~EMERGENCY~ROOM NO 202~null
-PAT-900~Chaudary Waseem~03387855464~chadwas12@gmail.com~3520263696369~23~Male~Married~Token no~2021/06/23 16:14:43~O-~123 Main Street, New York, NY 10030 ja~Talha Shoaib~ASS~EMERGENCY~ROOM NO 203~null
