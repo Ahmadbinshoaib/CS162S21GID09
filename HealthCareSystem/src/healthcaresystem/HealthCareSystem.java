@@ -622,7 +622,7 @@ public class HealthCareSystem {
             
             FileReader fr = null;
             try {
-                fr = new FileReader("Patients.txt");
+                fr = new FileReader("PrescribedPatients.txt");
             } catch (FileNotFoundException ex) {
                 Logger.getLogger(HealthCareSystem.class.getName()).log(Level.SEVERE, null, ex);
             }
